@@ -31,5 +31,15 @@ jobs:
               with urllib.request.urlopen(req,timeout=20) as r: raw=r.read().decode('utf-8','replace')
               print('SOURCE',url,'bytes',len(raw))
               p=Links();p.feed(raw);print('MATCHED ANCHORS',p.count)
+              import re
+              anchors=re.findall(r'<a\\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>',raw,re.S|re.I)
+              if url.endswith('/6790'):
+                  found=[html.unescape(h) for h,b in anchors if '피카츄.mp4' in b and 'blog.kakaocdn.net' in h]
+                  if found:
+                      check=urllib.request.Request(found[0],headers={'User-Agent':'Mozilla/5.0','Referer':url,'Range':'bytes=0-4095'})
+                      with urllib.request.urlopen(check,timeout=40) as response:
+                          header=response.headers.get('Content-Type','')
+                          magic=response.read(1024)
+                          print('FILE CHECK',response.status,'content-type',header,'magic',repr(magic[:20]),'length',response.headers.get('Content-Length'))
               print('CONTENT sample',repr(raw[max(0,raw.find('피카츄.mp4')-260):raw.find('피카츄.mp4')+200][:500]))
           PY
