@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v39 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v39.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch verified signed v39 APK
+        env:
+          ARTIFACT_URL: 'https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-ac10-81fa-82c1-9a20b530886a/raw?se=2026-10-11T10%3A39%3A17Z&sp=r&sv=2026-02-06&sr=b&scid=c6aadecf-8d7e-533c-b181-54961d75f534&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T07%3A40%3A24Z&ske=2026-10-12T07%3A40%3A24Z&sks=b&skv=2026-02-06&sig=vE8QDDZ7l3TioWEXnkG02usm31TD5cb/kcN0OTEvrdA%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo 'd047ac9adf23d2305b8763cb5d074a5d88ba6a40ea25a1218e5f23107bbb8885  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish v39 APK for existing in-app update check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v39 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.17.4 (39)" \
+            --notes "New folded cover screen system wallpaper application shortcut, separate instructions for Samsung One UI Fold8, and clear display-slot media count. Fixed misleading home/lock activation check which cannot identify independent cover/inner-display assignments. After choosing scene videos in the one-tap preset, users can apply this app to the cover screen while the phone is folded through Samsung's native wallpaper selector. Existing v38 fold selection, scene-aware 32 video catalog and auto presets remain. Signed and verified SHA-256 d047ac9adf23d2305b8763cb5d074a5d88ba6a40ea25a1218e5f23107bbb8885. Unit tests and build passed; system-side cover wallpaper binding depends on Samsung One UI and must be confirmed on device." \
+            --latest
