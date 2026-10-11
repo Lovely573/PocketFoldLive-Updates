@@ -14,12 +14,12 @@ jobs:
           from html.parser import HTMLParser
           pages=['https://minuhome.tistory.com/6790','https://minuhome.tistory.com/6193','https://minuhome.tistory.com/6797']
           class Links(HTMLParser):
-              def __init__(self): super().__init__(); self.count=0; self.active=None
+              def __init__(self): super().__init__(); self.count=0; self.active=None; self.links=[]
               def handle_starttag(self,tag,attrs):
                   if tag!='a':return
                   d=dict(attrs);link=html.unescape(d.get('href',''))
                   if 'blog.kakaocdn.net' in link and '.mp4' in link:
-                      self.active=link;self.count+=1
+                      self.active=link;self.count+=1;self.links.append(link)
                       path=urllib.parse.urlsplit(link).path
                       print('ATTACH',urllib.parse.unquote(path.split('/')[-1]),'querykeys',sorted(urllib.parse.parse_qs(urllib.parse.urlsplit(link).query)))
               def handle_data(self,data):
