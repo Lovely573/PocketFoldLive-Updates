@@ -1,0 +1,23 @@
+name: Publish initial APK release
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-initial.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch signed APK artifact
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-0984-8209-9781-78e99cf023e3/raw?se=2026-10-11T03%3A12%3A53Z&sp=r&sv=2026-02-06&sr=b&scid=9f33842d-729d-5835-8a28-7426fa028791&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-10T23%3A18%3A10Z&ske=2026-10-11T23%3A18%3A10Z&sks=b&skv=2026-02-06&sig=/l1G30ziyaBhF/NXt57vVtQZ2WU1ErdGeN%2B1brmQJx8%3D'
+        run: |
+          curl --retry 3 --fail --location "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+      - name: Publish v26
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v26 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.11.1 (26)" --notes "Token-free in-app updater. Only signed APK is public; project source remains private." --latest
