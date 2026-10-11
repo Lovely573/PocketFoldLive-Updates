@@ -1,0 +1,27 @@
+name: Publish PocketFoldLive v33 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v33.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve signed main branch APK
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-806c-820b-9afa-4d28e78db421/raw?se=2026-10-11T08%3A34%3A05Z&sp=r&sv=2026-02-06&sr=b&scid=912c1f8d-04de-5113-916c-93c4e7de1da9&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T07%3A39%3A49Z&ske=2026-10-12T07%3A39%3A49Z&sks=b&skv=2026-02-06&sig=YQvDji3NX0xrvyiAsqwvwdzRZSmURF1CBOfBs1qA2qo%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+      - name: Publish release v33
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v33 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.15.0 (33) GitHub Gallery" \
+            --notes "Brand-new in-app, GitHub-hosted wallpaper gallery. The gallery loads JSON from wallpapers/catalog-v1.json, plays a selected GitHub Release animation inside the app, automatically suggests cover/unfolded/landscape based on decoded pixels, and applies to the chosen scene/slot while preserving other selections. Replaces the previous external-video-search buttons. Includes one explicitly labeled low-resolution CC0 *functional test* character GIF, not Shin-chan/Pokemon recommendations. New eligible videos can be added to the catalog without another APK. No third-party copyrighted fan media is included or mirrored. Signed with the existing private app key; existing users may update over v32. Build/tests/signature verified in GitHub Actions; Fold8 device runtime still needs testing." \
+            --latest
