@@ -1,0 +1,24 @@
+name: Publish PocketFoldLive v29 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v29.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve signed private build
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-95b8-8209-a166-0fab60711243/raw?se=2026-10-11T04%3A13%3A41Z&sp=r&sv=2026-02-06&sr=b&scid=e38ff8b9-bb1a-5766-a4c2-af52f44819fb&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-10T23%3A31%3A40Z&ske=2026-10-11T23%3A31%3A40Z&sks=b&skv=2026-02-06&sig=C9vM9kPaGg%2BmjcnjbkG19b%2Bv95AlvVW0xWbm8fb7YRo%3D'
+        run: |
+          set -euo pipefail
+          curl --retry 3 --fail --location "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+      - name: Publish public APK-only release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v29 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.13.1 (29)" --notes "First APK signed with a dedicated private application signing key. Uninstall old (AOSP test-key) PocketFoldLive before installing this version. Existing local app data may be lost. All future updates must use the same private signing key. The source remains private." --latest
