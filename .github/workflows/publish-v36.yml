@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v36 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v36.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed v36 APK from verified private build
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-f564-820b-ba7b-41f984a30656/raw?se=2026-10-11T09%3A37%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=555a08f2-521e-5c1c-a9cd-7f2764162979&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T09%3A05%3A56Z&ske=2026-10-12T09%3A05%3A56Z&sks=b&skv=2026-02-06&sig=BfyNfPnqcPenAZ4H/rQxM90nLIAkjMxDTysFD/g65wE%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '2fa6d02ad11866ed2799afd47fce90daf08a15d69c6eced7fd28fd61adc40406  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish public v36 release for existing app update checker
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v36 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.17.1 (36)" \
+            --notes "Simplified in-app layout: preview at top, easier video browsing, search and category filters, compact scene settings, personal file import, creator source links and additional fan wallpaper discovery pages. Signed APK built successfully from source commit 8769ce522578c08827963f111c36074ae5a983e3. Unit tests and Android build passed. Physical-device source MP4 preview should still be verified." \
+            --latest
