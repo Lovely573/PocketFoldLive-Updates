@@ -1,0 +1,18 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-11",
+  "items": [
+    {
+      "id": "ranger-idle-cc0",
+      "title": "잔잔한 2D 캐릭터 대기 모션 (기능 테스트)",
+      "category": "샘플",
+      "description": "1.8초 반복 · 400×900 · 캐릭터 중심 · 해상도 낮음",
+      "url": "https://github.com/Lovely573/PocketFoldLive-Updates/releases/download/wallpaper-pack-v1/ranger-idle-cc0.gif",
+      "mime": "image/gif",
+      "width": 400,
+      "height": 900,
+      "credit": "Kurt Kaiser · CC0 1.0 · Wikimedia Commons",
+      "source": "https://commons.wikimedia.org/wiki/File:Ranger-Idle.gif"
+    }
+  ]
+}
