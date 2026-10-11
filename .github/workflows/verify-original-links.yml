@@ -31,10 +31,8 @@ jobs:
               with urllib.request.urlopen(req,timeout=20) as r: raw=r.read().decode('utf-8','replace')
               print('SOURCE',url,'bytes',len(raw))
               p=Links();p.feed(raw);print('MATCHED ANCHORS',p.count)
-              import re
-              anchors=re.findall(r'<a\\b[^>]*href="([^"]+)"[^>]*>(.*?)</a>',raw,re.S|re.I)
               if url.endswith('/6790'):
-                  found=[html.unescape(h) for h,b in anchors if '피카츄.mp4' in b and 'blog.kakaocdn.net' in h]
+                  found=[h for h in p.links if urllib.parse.unquote(urllib.parse.urlsplit(h).path).endswith('/피카츄.mp4')]
                   if found:
                       check=urllib.request.Request(found[0],headers={'User-Agent':'Mozilla/5.0','Referer':url,'Range':'bytes=0-4095'})
                       with urllib.request.urlopen(check,timeout=40) as response:
