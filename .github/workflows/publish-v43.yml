@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v43 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v43.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed v43 and verify sha256
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-8360-820b-9fb3-6c3fdee1204b/raw?se=2026-10-11T14%3A44%3A45Z&sp=r&sv=2026-02-06&sr=b&scid=400161ec-bafb-5039-9844-000b8e6865bf&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T09%3A06%3A39Z&ske=2026-10-12T09%3A06%3A39Z&sks=b&skv=2026-02-06&sig=rPKSbPKWtXkLdtj4JiQHy8lte2XRi2wyn4Y8wYYDNx4%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '7b13c393c1bdb174c368af9177673a549260c83a131c3e364c2d57f223f73487  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish in-app v43 update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v43 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.18.3 (43)" \
+            --notes "Scenario-aware randomized recommendations with no immediate identical repetition where alternatives exist. Choose between one-at-a-time and four-at-a-time candidate view in both individual video gallery and automatic setup, keeping one inline looping preview of the selected candidate. Each of the 10 situation and three screen mode choices retain their selected videos. Initial recommendations prioritize exact scene tags and correct original orientation while reducing duplicates across situations; fallback suggestions are labeled. The publisher-linked remote list expanded from 49 to 58 individual MP4 source variants by adding nine original HD 1920x1080 horizontal versions for unfolded/landscape displays, instead of stretching mobile portrait clips. The automatic preset continues validating MP4 orientation before assigning and preserves existing settings on failed download. APK compiled from source commit 9e99d102afa13162225ce0b751162a64038d3fa0; signed SHA256 7b13c393c1bdb174c368af9177673a549260c83a131c3e364c2d57f223f73487. Android unit tests, release build, and APK signing passed. On-device playback remains to be verified." \
+            --latest
