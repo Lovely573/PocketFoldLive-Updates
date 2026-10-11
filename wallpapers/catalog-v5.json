@@ -1,7 +1,7 @@
 {
   "schemaVersion": 5,
   "updatedAt": "2026-10-11",
-  "description": "57 publisher-linked personal-use MP4 originals. Added original 1920×1080 horizontal variants for unfolded screen; no GitHub rehosting. Scenario tags are editorial suggestions.",
+  "description": "58 credited original MP4 links, including nine additional independent horizontal 1920x1080 variants for Fold inner screen; no GitHub video mirroring.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -1035,6 +1035,24 @@
       "recommendedScenes": [
         "MORNING",
         "FULL_BATTERY"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-more-kuromi-spooky-wide",
+      "title": "쿠로미 · 귀여운 밤 · 펼친 화면",
+      "category": "산리오",
+      "description": "귀여운 어두운 밤 분위기 · 가로형 원본 HD 영상",
+      "url": "https://motionbgs.com/dl/hd/1730",
+      "sourcePage": "https://motionbgs.com/sweet-and-spooky-kuromi",
+      "approxMB": 1.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 가로 HD 다운로드 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "CRITICAL_BATTERY"
       ],
       "orientation": "가로"
     }
