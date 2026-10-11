@@ -1,0 +1,24 @@
+name: Publish PocketFoldLive v32 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v32.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download main CI v32 signed release artifact
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-72e0-820b-aca5-8ac49ac40f78/raw?se=2026-10-11T07%3A27%3A48Z&sp=r&sv=2026-02-06&sr=b&scid=349fe075-e35a-5814-bfe3-ee5f59566195&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T03%3A58%3A25Z&ske=2026-10-12T03%3A58%3A25Z&sks=b&skv=2026-02-06&sig=lx36E57Th6XwtmtBT6ADiyl6e3VmD%2BoKg52DaMFoi5E%3D'
+        run: |
+          set -euo pipefail
+          curl --retry 3 --fail --location "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+      - name: Publish APK-only v32 public release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v32 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.14.2 (32)" --notes "New calm and *directly applicable* curated videos: CC0 2D idle human GIF, CC0 FHD portrait water ripples, and CC BY-SA 4.0 FHD quiet sleeping cat. Users select a recommendation, the app fetches its Wikimedia Commons file (with license/size checks), previews motion and pixel quality, then applies to the selected scene and portrait/unfolded/landscape wallpaper slot. Licensed source/author information is shown in app. Famous character GIFs remain view-only without explicit download rights. Signed with the same private app key used since v29. CI verified; direct device test is needed to confirm availability and runtime playback." --latest
