@@ -1,0 +1,895 @@
+{
+  "schemaVersion": 4,
+  "updatedAt": "2026-10-11",
+  "description": "Publisher-linked original MP4 downloads only, including creator-shared fan works. No user videos mirrored or redistributed. 32 original and 17 added videos. Recommendation scenes are approximate editorial groupings.",
+  "items": [
+    {
+      "id": "shinchan-hill",
+      "title": "짱구 · 언덕에서 쉬기",
+      "category": "짱구",
+      "description": "평상시 추천 · 푸른 하늘과 초록 언덕 · 잔잔한 분위기",
+      "sourcePage": "https://minuhome.tistory.com/6193",
+      "fileName": "짱구 언덕.mp4",
+      "approxMB": 13.24,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-peek",
+      "title": "짱구 · 빼꼼",
+      "category": "짱구",
+      "description": "평상시 추천 · 살짝 얼굴 내밀기 · 캐릭터 중심",
+      "sourcePage": "https://minuhome.tistory.com/6193",
+      "fileName": "짱구 빼꼼.mp4",
+      "approxMB": 13.38,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING_START"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-eevee",
+      "title": "이브이 · 들판",
+      "category": "포켓몬",
+      "description": "평상시 추천 · 이브이 단독 영상 · 들판 배경",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "이브이.mp4",
+      "approxMB": 15.14,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-pikachu",
+      "title": "피카츄 · 들판",
+      "category": "포켓몬",
+      "description": "활기 있는 평상시 · 피카츄 단독 영상",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "피카츄.mp4",
+      "approxMB": 15.82,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "FULL_BATTERY"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-flashlight",
+      "title": "짱구 · 손전등",
+      "category": "짱구",
+      "description": "야간 후보 · 손전등 연출 · AI 제작 영상",
+      "sourcePage": "https://minuhome.tistory.com/6797",
+      "fileName": "짱구-손전등.mp4",
+      "approxMB": 15.73,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-fan",
+      "title": "짱구 · 선풍기",
+      "category": "짱구",
+      "description": "여름·평상시 후보 · AI 제작 영상",
+      "sourcePage": "https://minuhome.tistory.com/6797",
+      "fileName": "짱구-선풍기.mp4",
+      "approxMB": 17.5,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-mirror",
+      "title": "짱구 · 거울",
+      "category": "짱구",
+      "description": "재미있는 일상 연출 · AI 제작 영상",
+      "sourcePage": "https://minuhome.tistory.com/6797",
+      "fileName": "짱구-거울.mp4",
+      "approxMB": 14.12,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "EVENING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-fries-cat",
+      "title": "짱구 · 감튀고양이",
+      "category": "짱구",
+      "description": "귀여운 코믹 연출 · AI 제작 영상",
+      "sourcePage": "https://minuhome.tistory.com/6797",
+      "fileName": "짱구-감튀고양이.mp4",
+      "approxMB": 18.98,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-chocobi",
+      "title": "짱구 · 초코비",
+      "category": "짱구",
+      "description": "충전 중 후보 · 먹는 모습",
+      "sourcePage": "https://minuhome.tistory.com/6193",
+      "fileName": "짱구 초코비.mp4",
+      "approxMB": 17.75,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "CHARGING",
+        "CHARGING_START"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "shinchan-kart",
+      "title": "짱구 · 카트",
+      "category": "짱구",
+      "description": "활발한 코믹 동작 · 빠른 움직임",
+      "sourcePage": "https://minuhome.tistory.com/6193",
+      "fileName": "짱구 카트.mp4",
+      "approxMB": 17.51,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-mimikyu",
+      "title": "따라큐 · 들판",
+      "category": "포켓몬",
+      "description": "잔잔한 포켓몬 후보 · 들판을 달리는 모습",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "따라큐.mp4",
+      "approxMB": 14.88,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NIGHT",
+        "EVENING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-mew",
+      "title": "뮤 · 들판",
+      "category": "포켓몬",
+      "description": "몽환적인 캐릭터 후보 · 들판 배경",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "뮤.mp4",
+      "approxMB": 15.62,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NIGHT",
+        "EVENING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-psyduck",
+      "title": "고라파덕 · 들판",
+      "category": "포켓몬",
+      "description": "귀여운 일상 후보 · 캐릭터 중심",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "고라파덕.mp4",
+      "approxMB": 15.81,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "LOW_BATTERY"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-squirtle",
+      "title": "꼬부기 · 들판",
+      "category": "포켓몬",
+      "description": "사랑스러운 포켓몬 후보",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "꼬부기.mp4",
+      "approxMB": 15.09,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-fuecoco",
+      "title": "뜨아거 · 들판",
+      "category": "포켓몬",
+      "description": "귀여운 충전/평상시 후보",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "뜨아거.mp4",
+      "approxMB": 15.58,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "CHARGING",
+        "FULL_BATTERY"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "pokemon-oshawott",
+      "title": "수댕이 · 들판",
+      "category": "포켓몬",
+      "description": "조용한 포켓몬 일상 후보",
+      "sourcePage": "https://minuhome.tistory.com/6790",
+      "fileName": "수댕이.mp4",
+      "approxMB": 15.64,
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "credit": "MINUHOME · 원본 게시글",
+      "recommendedScenes": [
+        "NORMAL",
+        "EVENING"
+      ],
+      "orientation": "자동 검사"
+    },
+    {
+      "id": "motion-pika-loading-portrait",
+      "title": "피카츄 · 로딩 화면",
+      "category": "포켓몬",
+      "description": "충전 애니메이션에 어울리는 로딩 연출 · 세로 HD",
+      "url": "https://motionbgs.com/dl/mhd/3128",
+      "sourcePage": "https://motionbgs.com/mobile/pikachu-loading",
+      "approxMB": 0.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING",
+        "CHARGING_START"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-pika-loading-wide",
+      "title": "피카츄 · 로딩 (펼침 화면)",
+      "category": "포켓몬",
+      "description": "충전 중 펼쳐 둔 화면을 위한 가로형 로딩 애니메이션",
+      "url": "https://motionbgs.com/dl/hd/3128",
+      "sourcePage": "https://motionbgs.com/pikachu-loading",
+      "approxMB": 0.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING",
+        "CHARGING_START",
+        "GROUP_UNFOLDED"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-snorlax-night",
+      "title": "잠만보와 친구들 · 휴식",
+      "category": "포켓몬",
+      "description": "휴식 중인 포켓몬 친구들 · 야간/배터리 부족에 어울리는 잔잔한 세로 영상",
+      "url": "https://motionbgs.com/dl/mhd/1998",
+      "sourcePage": "https://motionbgs.com/mobile/snorlax-with-friends",
+      "approxMB": 1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-gengar-night-portrait",
+      "title": "팬텀 · 어두운 밤",
+      "category": "포켓몬",
+      "description": "어두운 밤 분위기 · 세로형 · 움직임이 강할 수 있음",
+      "url": "https://motionbgs.com/dl/mhd/6095",
+      "sourcePage": "https://motionbgs.com/mobile/gengar-terror",
+      "approxMB": 1.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "CRITICAL_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-umbreon-night-wide",
+      "title": "블래키 · 보랏빛 야간",
+      "category": "포켓몬",
+      "description": "은은한 야간 분위기의 블래키 · 가로 HD",
+      "url": "https://motionbgs.com/dl/hd/1997",
+      "sourcePage": "https://motionbgs.com/pokemon-umbreon-at-night",
+      "approxMB": 0.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "GROUP_UNFOLDED"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-pika-sleeping-wide",
+      "title": "잠자는 피카츄",
+      "category": "포켓몬",
+      "description": "잠든 피카츄 · 잔잔한 밤·절전 분위기 · 가로 HD",
+      "url": "https://motionbgs.com/dl/hd/3951",
+      "sourcePage": "https://motionbgs.com/pikachu-sleeping",
+      "approxMB": 0.1,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-charizard-full",
+      "title": "리자몽 · 활기찬 불꽃",
+      "category": "포켓몬",
+      "description": "배터리 충전 완료를 축하하는 활기찬 연출로 추천 · 세로 영상",
+      "url": "https://motionbgs.com/dl/mhd/4232",
+      "sourcePage": "https://motionbgs.com/mobile/charizard-pokemon",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "FULL_BATTERY",
+        "CHARGING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-scorbunny-full",
+      "title": "염버니 · 경쾌한 움직임",
+      "category": "포켓몬",
+      "description": "활기찬 세로형 포켓몬 · 충전 완료나 아침용",
+      "url": "https://motionbgs.com/dl/mhd/1994",
+      "sourcePage": "https://motionbgs.com/mobile/scorbunny-pokemon",
+      "approxMB": 9,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "FULL_BATTERY",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-fire-tower",
+      "title": "포켓몬 · 불꽃 타워",
+      "category": "포켓몬",
+      "description": "불꽃 효과가 뚜렷한 세로형 화면 · 충전 완료용 후보",
+      "url": "https://motionbgs.com/dl/mhd/4383",
+      "sourcePage": "https://motionbgs.com/mobile/tower-in-fire-pokemon",
+      "approxMB": 0.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "FULL_BATTERY",
+        "CRITICAL_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-pink-sakura-portrait",
+      "title": "포켓몬 · 벚꽃 나무",
+      "category": "포켓몬",
+      "description": "따뜻하고 차분한 아침/평상시 분위기 · 세로형",
+      "url": "https://motionbgs.com/dl/mhd/1554",
+      "sourcePage": "https://motionbgs.com/mobile/pink-sakura-tree",
+      "approxMB": 2.9,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-pink-sakura-wide",
+      "title": "포켓몬 · 벚꽃 정원 (펼침)",
+      "category": "포켓몬",
+      "description": "펼친 폴드 화면에 어울리는 가로형 포켓몬 배경",
+      "url": "https://motionbgs.com/dl/hd/1554",
+      "sourcePage": "https://motionbgs.com/pink-sakura-tree",
+      "approxMB": 9.1,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "GROUP_UNFOLDED",
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-pika-rain",
+      "title": "피카츄 · 비 오는 날",
+      "category": "포켓몬",
+      "description": "비 오는 날의 피카츄 · 저녁/평상시 차분한 분위기",
+      "url": "https://motionbgs.com/dl/mhd/6006",
+      "sourcePage": "https://motionbgs.com/mobile/pikachu-rainy-day-adventure",
+      "approxMB": 1.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "EVENING",
+        "NORMAL"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-pika-rest",
+      "title": "피카츄 · 따뜻한 휴식",
+      "category": "포켓몬",
+      "description": "온천에서 쉬는 피카츄 · 저녁 시간용",
+      "url": "https://motionbgs.com/dl/mhd/7124",
+      "sourcePage": "https://motionbgs.com/mobile/pikachu-hot-tub-chilling",
+      "approxMB": 3.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "EVENING",
+        "NIGHT"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-pika-bulba-wide",
+      "title": "피카츄와 이상해씨 · 함께",
+      "category": "포켓몬",
+      "description": "두 캐릭터가 등장하는 가로형 · 폴드 펼친 화면 추천",
+      "url": "https://motionbgs.com/dl/hd/4338",
+      "sourcePage": "https://motionbgs.com/pikachu-and-bulbasaur",
+      "approxMB": 2.8,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "GROUP_UNFOLDED",
+        "NORMAL"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-gengar-wide",
+      "title": "팬텀 · 어둠 속 (펼침)",
+      "category": "포켓몬",
+      "description": "야간에 어울리는 가로형 팬텀 영상",
+      "url": "https://motionbgs.com/dl/hd/6890",
+      "sourcePage": "https://motionbgs.com/pokemon-gengar",
+      "approxMB": 15.7,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "GROUP_UNFOLDED"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-snorlax-wide",
+      "title": "잠만보와 친구들 · 넓은 화면",
+      "category": "포켓몬",
+      "description": "차분한 휴식 연출 · 펼친 화면과 야간 추천",
+      "url": "https://motionbgs.com/dl/hd/1998",
+      "sourcePage": "https://motionbgs.com/snorlax-with-friends",
+      "approxMB": 2.7,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "GROUP_UNFOLDED",
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "가로"
+    },
+    {
+      "id": "motion-more-pixel-bulbasaur",
+      "title": "이상해씨 · 픽셀 아트",
+      "category": "포켓몬",
+      "description": "차분한 픽셀 이상해씨 · 낮과 저녁",
+      "url": "https://motionbgs.com/dl/mhd/4443",
+      "sourcePage": "https://motionbgs.com/mobile/pixel-bulbasaur",
+      "approxMB": 0.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING",
+        "EVENING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-arceus-pokemon",
+      "title": "아르세우스 · 포켓몬",
+      "category": "포켓몬",
+      "description": "웅장한 분위기 · 충전 완료",
+      "url": "https://motionbgs.com/dl/mhd/7706",
+      "sourcePage": "https://motionbgs.com/mobile/arceus-pokemon",
+      "approxMB": 3.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "FULL_BATTERY",
+        "CHARGING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-kyogre-pokemon",
+      "title": "가이오가 · 바닷속",
+      "category": "포켓몬",
+      "description": "물빛과 청량한 분위기",
+      "url": "https://motionbgs.com/dl/mhd/4315",
+      "sourcePage": "https://motionbgs.com/mobile/kyogre-pokemon",
+      "approxMB": 3.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "EVENING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-totoro-neighbor",
+      "title": "토토로 · 숲속",
+      "category": "토토로",
+      "description": "차분한 숲속 캐릭터",
+      "url": "https://motionbgs.com/dl/mhd/7730",
+      "sourcePage": "https://motionbgs.com/mobile/my-neighbor-totoro",
+      "approxMB": 1.9,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "EVENING",
+        "NIGHT"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-totoro-tree",
+      "title": "토토로 · 나무 위",
+      "category": "토토로",
+      "description": "초록 숲속의 차분한 풍경",
+      "url": "https://motionbgs.com/dl/mhd/135",
+      "sourcePage": "https://motionbgs.com/mobile/totoro-on-top-of-a-tree",
+      "approxMB": 1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-doraemon-nature",
+      "title": "도라에몽 · 자연 속 여행",
+      "category": "도라에몽",
+      "description": "평화로운 하늘과 자연",
+      "url": "https://motionbgs.com/dl/mhd/8095",
+      "sourcePage": "https://motionbgs.com/mobile/dora-nature",
+      "approxMB": 2.1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-kuromi-space",
+      "title": "쿠로미 · 우주 여행",
+      "category": "산리오",
+      "description": "신비로운 보랏빛 우주",
+      "url": "https://motionbgs.com/dl/mhd/1724",
+      "sourcePage": "https://motionbgs.com/mobile/kuromi-in-space-hello-kitty",
+      "approxMB": 1.1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "EVENING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-kuromi-rain",
+      "title": "쿠로미 · 빗속 휴식",
+      "category": "산리오",
+      "description": "빗속에서 쉬는 쿠로미",
+      "url": "https://motionbgs.com/dl/mhd/1728",
+      "sourcePage": "https://motionbgs.com/mobile/kuromi-sitting-under-the-rain",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "EVENING",
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-kuromi-spooky",
+      "title": "쿠로미 · 귀여운 밤",
+      "category": "산리오",
+      "description": "귀여운 어두운 밤 분위기",
+      "url": "https://motionbgs.com/dl/mhd/1730",
+      "sourcePage": "https://motionbgs.com/mobile/sweet-and-spooky-kuromi",
+      "approxMB": 1.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "CRITICAL_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-sanrio-space",
+      "title": "산리오 친구들 · 우주",
+      "category": "산리오",
+      "description": "여러 친구가 함께 있는 배경",
+      "url": "https://motionbgs.com/dl/mhd/3279",
+      "sourcePage": "https://motionbgs.com/mobile/sanrio-in-space",
+      "approxMB": 2,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-snoopy-snow-night",
+      "title": "스누피와 찰리 · 눈 내리는 밤",
+      "category": "스누피",
+      "description": "차분한 겨울밤 애니메이션",
+      "url": "https://motionbgs.com/dl/mhd/8318",
+      "sourcePage": "https://motionbgs.com/mobile/charlie-snoopy-snow-night",
+      "approxMB": 1.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "EVENING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-corgi-sleeping",
+      "title": "웰시코기 · 낮잠",
+      "category": "동물·힐링",
+      "description": "자고 있는 강아지 · 잔잔한 배경",
+      "url": "https://motionbgs.com/dl/mhd/5685",
+      "sourcePage": "https://motionbgs.com/mobile/corgi-sleeping",
+      "approxMB": 5.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-abi-toads-ride",
+      "title": "귀여운 두꺼비 · 연못 여행",
+      "category": "동물·힐링",
+      "description": "귀여운 게임풍 두꺼비",
+      "url": "https://motionbgs.com/dl/mhd/7631",
+      "sourcePage": "https://motionbgs.com/mobile/abi-toads-lilypad-ride",
+      "approxMB": 1.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-healing-cat-cafe",
+      "title": "고양이 · 힐링 카페",
+      "category": "동물·힐링",
+      "description": "따뜻한 분위기의 고양이 카페",
+      "url": "https://motionbgs.com/dl/mhd/8036",
+      "sourcePage": "https://motionbgs.com/mobile/healing-cat-cafe",
+      "approxMB": 2.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "EVENING",
+        "NORMAL"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-cinnamoroll-flying",
+      "title": "시나모롤 · 하늘 날기",
+      "category": "산리오",
+      "description": "날아다니는 시나모롤 · 밝은 분위기",
+      "url": "https://motionbgs.com/dl/mhd/1732",
+      "sourcePage": "https://motionbgs.com/mobile/flying-cinnamoroll-hello-kitty",
+      "approxMB": 1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "MORNING",
+        "FULL_BATTERY"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-cinnamoroll-clouds",
+      "title": "시나모롤 · 구름 사이",
+      "category": "산리오",
+      "description": "부드럽고 차분한 구름 연출",
+      "url": "https://motionbgs.com/dl/mhd/1733",
+      "sourcePage": "https://motionbgs.com/mobile/cinnamoroll-flying-in-clouds",
+      "approxMB": 0.9,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "MORNING",
+        "NORMAL"
+      ],
+      "orientation": "세로"
+    },
+    {
+      "id": "motion-more-hello-kitty-cloud",
+      "title": "헬로키티 · 분홍 구름",
+      "category": "산리오",
+      "description": "분홍빛 귀여운 구름",
+      "url": "https://motionbgs.com/dl/mhd/1722",
+      "sourcePage": "https://motionbgs.com/mobile/pink-hello-kitty-on-cloud",
+      "approxMB": 1.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "MORNING"
+      ],
+      "orientation": "세로"
+    }
+  ]
+}
