@@ -64,6 +64,7 @@ def characteristics(session, url, expected_size):
     # Validate from the real local bytes; ffprobe HTTP directly is not reliable on
     # every CDN and can falsely reject otherwise playable MP4s.
     if not shutil.which("ffprobe"):
+        print("NASA validator unavailable: ffprobe is not installed")
         return None
     fd, name = tempfile.mkstemp(suffix=".mp4")
     os.close(fd)
