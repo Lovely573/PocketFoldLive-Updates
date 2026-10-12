@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v44 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v44.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve signed v44 APK and verify checksum
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-702c-8209-b010-698e7562c873/raw?se=2026-10-12T00%3A13%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=8bfb60a4-cd5f-5509-972a-e5628db7e37e&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T21%3A56%3A19Z&ske=2026-10-12T21%3A56%3A19Z&sks=b&skv=2026-02-06&sig=GRKVtudatvVkfJhTAWblIAa5HeoZGj4LVBJk41JBvoo%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output artifact.zip
+          unzip -o artifact.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '74ec7c4512b4e7ef8ca78d2b59ecda6fe3f9f95154ae642581a2d696c75dc429  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish latest v44 for in-app update check
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v44 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.19.0 (44)" \
+            --notes "Curated natural-style 2D/3D animated scenes with tagged event-based matching and independently sized portrait mobile HD / landscape FHD publisher originals. Removed pixel artwork, clearly mismatched recommendations and deprecated morning/evening scene triggers (legacy media settings preserved). Added verified original MotionBGS Pokemon/animal scenes including Arcanine and Oddish, Lucario Power Surge, Rayquaza Night Sky, Wooloo and Sleeping Pokemon. Source catalog v6 has 61 credited entries, but only accurately tagged and oriented items appear in default recommendations. New auto preset starts with a complete per-screen scene overview showing all suggested video titles and existing configuration statuses. Tap a scene to watch its moving MP4 preview, rotate suggestions or choose 1/4 candidate comparison, return to overview, and finally apply the full combination. Group-unfolded is offered only on wide screens. Manual gallery shows strict 2D/3D scene recommendations by default, with an all-video mode for manual use. Existing choices are preserved until confirmation, and failed downloads never replace applied videos. Source commit 1e0197439b00e5eae31dbcba5dbd6481220b4dbd; signed APK SHA-256 74ec7c4512b4e7ef8ca78d2b59ecda6fe3f9f95154ae642581a2d696c75dc429. Unit tests, Android release build and signing passed; physical Galaxy Fold8 source playback remains to be verified." \
+            --latest
