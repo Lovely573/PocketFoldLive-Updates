@@ -12,6 +12,8 @@ import json
 import re
 import shutil
 import subprocess
+import tempfile
+import os
 from pathlib import Path
 from urllib.parse import quote, urlparse
 import requests
@@ -58,24 +60,46 @@ def size_and_header(session, url):
         return None
 
 
-def characteristics(url):
+def characteristics(session, url, expected_size):
+    # Validate from the real local bytes; ffprobe HTTP directly is not reliable on
+    # every CDN and can falsely reject otherwise playable MP4s.
     if not shutil.which("ffprobe"):
         return None
+    fd, name = tempfile.mkstemp(suffix=".mp4")
+    os.close(fd)
     try:
+        total = 0
+        with session.get(url, headers=HEADERS, stream=True, timeout=40) as response:
+            response.raise_for_status()
+            if not secure_url(response.url):
+                return None
+            with open(name, "wb") as target:
+                for chunk in response.iter_content(chunk_size=128 * 1024):
+                    total += len(chunk)
+                    if total > MAX_SIZE:
+                        return None
+                    target.write(chunk)
+        if abs(total - expected_size) > 128:
+            return None
         p = subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height:format=duration",
-             "-of", "json", url],
+             "-of", "json", name],
             capture_output=True, text=True, timeout=25, check=True,
         )
         info = json.loads(p.stdout)
         stream = next(s for s in info.get("streams", []) if s.get("codec_type") == "video")
         width, height = int(stream.get("width", 0)), int(stream.get("height", 0))
         duration = float(info.get("format", {}).get("duration") or 0)
+        print("NASA inspected:", width, height, round(duration, 1), url[-65:])
         if width < 960 or height < 540 or width <= height or duration <= 0 or duration > 240:
             return None
         return width, height, duration
-    except (subprocess.SubprocessError, StopIteration, ValueError, KeyError):
+    except (requests.RequestException, OSError, subprocess.SubprocessError, StopIteration, ValueError, KeyError) as exc:
+        print("NASA probe failed:", type(exc).__name__, str(exc)[:90])
         return None
+    finally:
+        os.remove(name)
+
 
 
 def candidates(session, query):
@@ -107,7 +131,7 @@ def discover():
             title = meta.get("title", "").strip()
             description = str(meta.get("description", ""))[:1200]
             # The source library can include third-party media; reject explicit copyright signs.
-            if not source_id or source_id in seen or not GOOD.search(title) or BAD.search(title + " " + description):
+            if not source_id or source_id in seen or not GOOD.search(title) or BAD.search(title) or "copyright" in description.lower():
                 continue
             print("NASA possible:", title[:80])
             seen.add(source_id)
@@ -137,7 +161,7 @@ def discover():
                 if length is None:
                     print("NASA candidate invalid size/header:", link[-75:])
                     continue
-                info = characteristics(link)
+                info = characteristics(session, link, length)
                 if info is None:
                     print("NASA candidate invalid characteristics:", link[-75:], length)
                     continue
