@@ -47,6 +47,11 @@ jobs:
                   files=json.load(response)
                 mp4=[x for x in files if x.lower().split("?")[0].endswith(".mp4")]
                 print("NASA ASSET",str(meta.get("title"))[:70],str(meta.get("nasa_id"))[:60],len(mp4),str(mp4[:4])[:470])
+                if mp4 and "Aurora Named" in str(meta.get("title")):
+                  candidate=next((x for x in mp4 if "~mobile.mp4" in x),mp4[0]).replace("http://","https://")
+                  req=urllib.request.Request(candidate,headers={"User-Agent":"PocketFoldLive-personal-open-media-browser/1.0","Range":"bytes=0-31"})
+                  with urllib.request.urlopen(req,timeout=20) as response:
+                    print("NASA HTTPS RANGE",response.status,response.headers.get("Content-Type"),response.headers.get("Content-Range"),response.headers.get("Content-Length"),response.read(32).hex())
             except Exception as e:
               print("NASA DETAIL FAILED",type(e).__name__,str(e)[:120])
           PY
