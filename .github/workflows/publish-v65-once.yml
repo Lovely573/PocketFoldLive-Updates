@@ -1,0 +1,43 @@
+name: Publish signed build 65 once
+on:
+  push:
+    paths: [".github/workflows/publish-v65-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download CI-signed verified APK
+        env:
+          ARTIFACT_URL: "https://sdmntprsouthcentralus.oaiusercontent.com/files/00000000-4728-81f7-bfdb-5705b559d486/raw?se=2026-10-12T13%3A12%3A58Z&sp=r&sv=2026-02-06&sr=b&scid=5e15f9f2-2dde-55ec-8c7f-72a7376709be&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T22%3A37%3A31Z&ske=2026-10-12T22%3A37%3A31Z&sks=b&skv=2026-02-06&sig=kK4SdlqhiCeKmzlmcfsMZY6dEIAWXueaTYLkmiBtntc%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "323e524ffdd71416b2993cad5aaedff67950a62fa8e16492a564c7c6c1d5ecf0  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Publish public in-app upgrade v65
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.27.0 · Build 65
+
+          - Stability and UI/UX patch. No new wallpaper video catalog changes.
+          - Live wallpaper engine displays a temporary loading/reconnection frame instead of leaving a fully black wallpaper surface during decoder preparation and video retry.
+          - Record actual last first-rendered video frame separately from preparation, recovery, pause, service stop and fallback on each screen orientation. Do not store filenames or media URLs in diagnostics.
+          - Home screen prioritizes current wallpaper state, selected wallpaper management and one-tap setup diagnostics.
+          - Diagnostics distinguish saved scene media, lost local files, available fallback slots, Android system/lock wallpaper service observations, and the wallpaper engine's last real playback report.
+          - Fold8 Samsung cover/unfolded assignment cannot be proved from Android's basic wallpaper API. The app explains this rather than showing a false success.
+          - Static images stop unnecessary repeated drawing when motion and scene effects are disabled, and redraw on surface size changes.
+          - Guard both Android/Samsung live wallpaper picker intents, and correct cover-screen scene count.
+          - Existing scenes, saved videos, themes, likes/dislikes and undo history preserved.
+
+          Branch and main CI: unit tests, release compilation, signed APK verification succeeded.
+          Source commit: fc27b604ae8be373ba4b550379d7db5f22512751
+          APK SHA256: 323e524ffdd71416b2993cad5aaedff67950a62fa8e16492a564c7c6c1d5ecf0
+          Device-specific Fold8 replay still requires physical testing.
+          EOF
+          gh release create v65 PocketFoldLive.apk --title "PocketFoldLive v0.27.0 (65)" --notes-file RELEASE_NOTES.md --latest
