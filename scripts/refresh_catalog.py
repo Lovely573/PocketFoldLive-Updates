@@ -19,7 +19,7 @@ import requests
 from bs4 import BeautifulSoup
 
 ROOT = "https://motionbgs.com"
-CATALOG = Path("wallpapers/catalog-v9.json")
+CATALOG = Path("wallpapers/catalog-v10.json")
 SOURCES = (
     ("pokemon", "포켓몬", {"pokemon", "character", "2d"}),
     ("hello-kitty", "산리오", {"sanrio", "character", "cute", "2d"}),

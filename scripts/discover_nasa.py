@@ -16,7 +16,7 @@ from pathlib import Path
 from urllib.parse import quote, urlparse
 import requests
 
-CATALOG = Path("wallpapers/catalog-v9.json")
+CATALOG = Path("wallpapers/catalog-v10.json")
 SEARCH = "https://images-api.nasa.gov/search"
 MAX_NEW = 4
 MAX_SIZE = 70_000_000
@@ -109,6 +109,7 @@ def discover():
             # The source library can include third-party media; reject explicit copyright signs.
             if not source_id or source_id in seen or not GOOD.search(title) or BAD.search(title + " " + description):
                 continue
+            print("NASA possible:", title[:80])
             seen.add(source_id)
             artwork = "nasa:" + source_id
             if artwork in old_artwork:
@@ -134,9 +135,11 @@ def discover():
             for link in sorted(set(mp4s), key=priority):
                 length = size_and_header(session, link)
                 if length is None:
+                    print("NASA candidate invalid size/header:", link[-75:])
                     continue
                 info = characteristics(link)
                 if info is None:
+                    print("NASA candidate invalid characteristics:", link[-75:], length)
                     continue
                 width, height, duration = info
                 hashed = hashlib.sha256(source_id.encode()).hexdigest()[:16]
