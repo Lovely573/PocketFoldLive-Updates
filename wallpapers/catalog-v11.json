@@ -1,7 +1,7 @@
 {
   "schemaVersion": 10,
-  "updatedAt": "2026-10-12T07:20:00Z",
-  "description": "PocketFoldLive original-publisher wallpaper catalog (v11). 127 entries: 3 new verified publisher MP4 download endpoints for Detective Conan and Doraemon. No MP4 is mirrored to GitHub. Playback on each Fold8 is checked at preview, not guaranteed by the index. Unverified Shin-chan entries remain excluded and Hello Jadoo remains empty.",
+  "updatedAt": "2026-10-12T07:32:00Z",
+  "description": "PocketFoldLive curated public original-publisher metadata (v11), 128 entries. Conan HD and Doraemon Galaxy/Sky HD + Sky mobile original publisher buttons verified. Unverified Shin-chan clips are selectable only after personal import; no copyrighted MP4 is mirrored.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -3571,13 +3571,13 @@
       "artworkKey": "motionbgs:8128"
     },
     {
-      "id": "motion-doraemon-flying-wide",
-      "title": "도라에몽 · 하늘을 날다 (펼침)",
+      "id": "motion-doraemon-sky-wide",
+      "title": "도라에몽 · 하늘 여행 (펼침)",
       "category": "도라에몽",
-      "description": "가로 FHD · 하늘을 나는 활기찬 느낌 · 충전 시작·충전 중 테마 보완 · 충전 효과 전용 영상은 아님",
-      "url": "https://motionbgs.com/dl/hd/5876",
-      "sourcePage": "https://motionbgs.com/dora-flying",
-      "approxMB": 2.4,
+      "description": "하늘을 나는 도라에몽 · 펼침 FHD · 원본 공개 MP4",
+      "url": "https://motionbgs.com/dl/hd/8125",
+      "sourcePage": "https://motionbgs.com/dorasky",
+      "approxMB": 3.3,
       "mime": "video/mp4",
       "width": 1920,
       "height": 1080,
@@ -3600,7 +3600,7 @@
         "energy",
         "2d"
       ],
-      "artworkKey": "motionbgs:5876"
+      "artworkKey": "motionbgs:8125"
     },
     {
       "id": "motion-doraemon-galaxy-wide",
@@ -3631,6 +3631,37 @@
         "2d"
       ],
       "artworkKey": "motionbgs:8094"
+    },
+    {
+      "id": "motion-doraemon-sky-portrait",
+      "title": "도라에몽 · 하늘 여행 (접힘)",
+      "category": "도라에몽",
+      "description": "세로 HD · 하늘을 나는 도라에몽 · 충전 시작과 충전 중의 개인 취향 후보",
+      "url": "https://motionbgs.com/dl/mhd/8125",
+      "sourcePage": "https://motionbgs.com/mobile/dorasky",
+      "approxMB": 2.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인용",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY"
+      ],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "HD (720×1280)",
+      "recommendable": true,
+      "tasteTags": [
+        "doraemon",
+        "character",
+        "cute",
+        "energy",
+        "2d"
+      ],
+      "artworkKey": "motionbgs:8125"
     }
   ]
 }
