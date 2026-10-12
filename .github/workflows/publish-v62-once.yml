@@ -1,0 +1,43 @@
+name: Publish signed build 62 once
+
+on:
+  push:
+    paths: [".github/workflows/publish-v62-once.yml"]
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download official signed build 62 CI artifact
+        env:
+          ZIP_URL: "https://sdmntprwestus.oaiusercontent.com/files/00000000-4cf8-8230-8b89-686de4f5bd2e/raw?se=2026-10-12T08%3A04%3A58Z&sp=r&sv=2026-02-06&sr=b&scid=f7b79c38-5cf7-54e1-b7cf-a85e6998d7a6&skoid=f8b66c09-1aa0-4801-9884-173c5cef2b8c&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T01%3A30%3A54Z&ske=2026-10-13T01%3A30%3A54Z&sks=b&skv=2026-02-06&sig=v76%2BXDREU4w9EGulXDpHMIwQD8Mygm/9syxWG0LS1iA%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ZIP_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "10a3da8be73131874762260d19c3ffb6f8174295a123538f17e8b0432d1a9256  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+
+      - name: Publish public release for the existing in-app updater
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.25.0 · Build 62
+
+          - Individual character themes now report scene coverage for cover, unfolded and landscape modes.
+          - Conan and Doraemon original publisher MP4 sources added.
+          - Eight Shin-chan personal-use original attachment links available via remote catalog v11.
+          - Import a pasted MotionBGS original source link through AI Search, preview and apply to your phone.
+          - Existing likes, dislikes, themed batch setups, video copy and restore state are preserved.
+          - Unavailable or incorrectly oriented clips never overwrite your existing scene.
+          - No copyrighted original video files are included in the APK or redistributed via GitHub.
+
+          Source commit: 63a49129ec18f8a924422eb9e2b562f32c0fbccf
+          SHA256: 10a3da8be73131874762260d19c3ffb6f8174295a123538f17e8b0432d1a9256
+          EOF
+          gh release create v62 PocketFoldLive.apk --title "PocketFoldLive v0.25.0 (62)" --notes-file RELEASE_NOTES.md --latest
