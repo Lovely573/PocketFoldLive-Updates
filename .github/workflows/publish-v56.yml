@@ -1,0 +1,38 @@
+name: Publish PocketFoldLive v56 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v56.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve and SHA256 verify signed APK
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-c38c-820b-8a31-bde1fc52cc7d/raw?se=2026-10-12T04%3A51%3A57Z&sp=r&sv=2026-02-06&sr=b&scid=f2be8c45-477f-5a21-9717-f2419c8fda68&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T01%3A59%3A36Z&ske=2026-10-13T01%3A59%3A36Z&sks=b&skv=2026-02-06&sig=ZHQJIGc7BWQ5Lzvn/BPO%2Bug%2Bt1ZPe8xN3cNXoImC6zY%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo 'b896669575cf8b1b53337ad8fb57355d6abab0be52cc153b958df129a55d91b4  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish v56 Korean release notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > RELEASE_NOTES.md <<'RELEASE_NOTES'
+          - 실패하던 주간 영상 자동 탐색(원본 사이트 403 오류)을 제거했습니다.
+          - 포켓몬·산리오·짱구 원본 영상 사이트 바로가기를 추가했습니다.
+          - 업데이트 확인 화면에서 설치 전에 간단한 변경 내역을 볼 수 있습니다.
+          - 업데이트 설치 후 앱을 처음 열면 변경 내역 팝업이 한 번 표시됩니다.
+          - 기존 캐릭터 영상 124개, 좋아요·싫어요, 배경화면 설정은 그대로 유지됩니다.
+          - 새 작품이 목록에 실제 추가됐을 때만 알리는 주기적 목록 확인은 유지합니다.
+
+          참고: 캐릭터 영상을 외부에서 자동 발굴하는 기능은 현재 지원하지 않습니다. 원본 사이트의 접근 제한을 우회하지 않으며, 사용자가 원본을 직접 찾아 다운로드할 수 있습니다.
+          소스 커밋: beb66e7df0b0cbb41b1d6d217ef62e275f03030f
+          APK SHA256: b896669575cf8b1b53337ad8fb57355d6abab0be52cc153b958df129a55d91b4
+          RELEASE_NOTES
+          gh release create v56 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.21.2 (56)" --notes-file RELEASE_NOTES.md --latest
