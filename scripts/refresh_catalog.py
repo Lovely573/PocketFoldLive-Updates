@@ -163,8 +163,9 @@ def discover(session, catalog):
             address = f"{ROOT}/tag:{tag}/" + (f"{page_num}/" if page_num > 1 else "")
             try:
                 listings = list_candidates(get_page(session, address))
-            except (requests.RequestException, ValueError):
+            except (requests.RequestException, ValueError) as exc:
                 errors += 1
+                print(f"Discovery source unavailable {address}: {type(exc).__name__} {str(exc)[:160]}")
                 continue
             for source, title in listings.items():
                 if (source in known_pages or BAD.search(title)

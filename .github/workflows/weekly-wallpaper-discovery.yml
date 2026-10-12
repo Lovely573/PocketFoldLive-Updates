@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - ".github/workflows/weekly-wallpaper-discovery.yml"
+      - "scripts/refresh_catalog.py"
 permissions:
   contents: write
 concurrency:
