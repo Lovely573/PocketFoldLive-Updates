@@ -23,7 +23,17 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
+          cat > RELEASE_NOTES.txt <<'RELEASE_NOTES'
+          v54 / 0.21.0 - Weekly video catalog checks and new-wallpaper notifications.
+          New artwork triggers an Android notification and an in-app popup. Reactions filter dislikes.
+          Source discovery scans public original-page MP4 links and does not redistribute videos.
+          Limitation: the first scheduled discovery job encountered HTTP 403 on MotionBGS listings,
+          so new media cannot be automatically added until access changes or another permitted source is connected.
+          GitHub Android CI tests, build, v3 signing and APK hash verification succeeded.
+          Source commit c38e1bcd3e2b83f8ba192df7d91fadedd6354071.
+          APK SHA256 3908ba3f9d246cb00b1d29e7f1db5d8db055ac278558012da66e7a6ac13a6f0d.
+          RELEASE_NOTES
           gh release create v54 PocketFoldLive.apk --repo "${{ github.repository }}" \
             --title "PocketFoldLive v0.21.0 (54)" \
-            --notes "v54 / 0.21.0 - New wallpaper discovery alerts. The app schedules a network-constrained weekly catalog check, detects new unique artworks after the first baseline check, excludes disliked artworks, and displays a system notification when permitted. On next app opening it shows a "new wallpapers" dialog; a manual check button is available in Settings. Media files are not bundled or redistributed, and applied wallpapers are preserved. Public repository includes a scheduled discovery script for original MotionBGS links with HTTP+MP4 header checks and duplicate prevention. IMPORTANT: first GitHub Actions source discovery received HTTP 403 from MotionBGS listing pages; that discovery job currently cannot add new items until source access is available or a permitted alternate provider is added. Therefore this build implements checking and notifications, but does not guarantee weekly new videos. Unit tests, build, signed release and signer verification passed. Source c38e1bcd3e2b83f8ba192df7d91fadedd6354071. APK SHA-256 3908ba3f9d246cb00b1d29e7f1db5d8db055ac278558012da66e7a6ac13a6f0d." \
+            --notes-file RELEASE_NOTES.txt \
             --latest
