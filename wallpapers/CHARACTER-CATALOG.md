@@ -1,6 +1,6 @@
 # PocketFoldLive character catalog (build 62 / v0.25.0)
 
-The app reads `wallpapers/catalog-v11.json` (128 publisher-linked variants).
+The app reads `wallpapers/catalog-v12.json` (129 publisher-linked variants).
 
 ## Personal use vs public distribution
 
@@ -10,13 +10,15 @@ The app reads `wallpapers/catalog-v11.json` (128 publisher-linked variants).
 - Avoid download-protection bypasses, misleading ownership/license labels, circuit-board visuals, disorienting background motion, and obvious duplicates.
 - If a requested theme has no compatible video for a scene/orientation, leave the configured wallpaper unchanged instead of filling it with another character. Keep a stable `artworkKey` across orientations so likes/dislikes remain unified.
 
-## Character coverage in catalog v11
+## Character coverage in catalog v12
 
 - Pokémon and Sanrio retain existing verified originals.
 - Shin-chan: 8 public MP4 attachments are available from MINUHOME posts 6193 and 6797. Portrait classification is provisional, checked against the actual MP4 before applying on device.
-- Detective Conan: one FHD landscape fan-made original, publisher download link at `https://motionbgs.com/detective-conan`.
+- Detective Conan: one FHD landscape original at `https://motionbgs.com/detective-conan` and one separate Conan/Haibara FHD/HEVC MP4 original at `https://www.desktophut.com/Detective-Conan-Ai-Haibara-Anime-Live-Wallpaper`.
+- DesktopHut originals are downloaded from the creator page's public original-MP4 button to the device. This is not a claim that every Android video decoder supports HEVC; the app previews before allowing Apply.
 - Doraemon: publisher links for Nature Adventure, Sky Adventure (portrait/landscape), and Galaxy Float.
 - Hello Jadoo: no confirmed publicly downloadable MP4 source has been added, and no other character is substituted.
+- Keep `catalog-v11.json` unchanged so users with build 62 do not fetch new source URLs that its original-link allowlist cannot handle.
 
 ## Technical requirements
 
