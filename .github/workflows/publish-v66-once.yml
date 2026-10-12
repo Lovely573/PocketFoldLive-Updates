@@ -1,0 +1,40 @@
+name: Publish signed build 66 once
+on:
+  push:
+    paths: [".github/workflows/publish-v66-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download CI-signed verified APK
+        env:
+          ARTIFACT_URL: "https://sdmntpraustraliaeast.oaiusercontent.com/files/00000000-570c-81fa-8aff-d05636d08b33/raw?se=2026-10-12T14%3A17%3A41Z&sp=r&sv=2026-02-06&sr=b&scid=ca413458-b532-518a-b0f9-b5a0cc7eb8ce&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T22%3A44%3A22Z&ske=2026-10-12T22%3A44%3A22Z&sks=b&skv=2026-02-06&sig=UtWoeHMyI8CYrseBtboLyP4kBjs0DvXruVJk3crcdAM%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "ae1590766db351182ca8cbee41633d83d12348317a6c967447e2128a58ea5a17  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Publish public in-app upgrade v66
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.27.1 · Build 66
+
+          - Fold display resume and wallpaper playback recovery hotfix.
+          - A startup first-frame watchdog now correctly re-arms when the wallpaper becomes visible after being paused/offscreen.
+          - Monitors the actual playback position after first frame. If the decoder progress freezes for a sustained period, it triggers controlled automatic recovery instead of requiring a manual unfold/refold.
+          - Rebinds native MediaPlayer or ExoPlayer output only when the actual Android Surface object changes in a Fold display handoff, avoiding unnecessary reloads at every size update.
+          - Prevents starting native MediaPlayer before async prepare is complete.
+          - The playback diagnostic indicates post-resume progress separately from earlier first-frame success.
+          - Keeps the existing wallpaper catalog, user-selected videos, scene assignments, themes, reactions and undo history untouched.
+          - Tested on GitHub Android CI (unit tests, release assembly, cryptographic signing and signature verification). User's Fold8 real-world intermittent playback must be verified on-device.
+
+          Source commit: 887de8fe2a5523e4c97d21ccfdab1769ec093080
+          APK SHA256: ae1590766db351182ca8cbee41633d83d12348317a6c967447e2128a58ea5a17
+          EOF
+          gh release create v66 PocketFoldLive.apk --title "PocketFoldLive v0.27.1 (66)" --notes-file RELEASE_NOTES.md --latest
