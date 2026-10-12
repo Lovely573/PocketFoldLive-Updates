@@ -1,0 +1,40 @@
+name: Publish signed build 64 once
+on:
+  push:
+    paths: [".github/workflows/publish-v64-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download official CI signed APK
+        env:
+          ARTIFACT_URL: "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-2330-8209-a40f-6e9c1f8af3a8/raw?se=2026-10-12T08%3A53%3A32Z&sp=r&sv=2026-02-06&sr=b&scid=79aa4b8b-69a9-5915-98bf-c08b3dc8355e&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T07%3A36%3A46Z&ske=2026-10-13T07%3A36%3A46Z&sks=b&skv=2026-02-06&sig=N0/utHw79FxpcqMuW9CZTo%2B3J3CcXS6QnRYrt3kAbpg%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "1e210325ca51cda0cc7eb17b63fd1b588e3596de938c4d2a73035ecf25b9264c  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Create public release for in-app update
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.26.0 · Build 64
+
+          - Theme picker now shows unique ready video counts and how many cover and unfolded situations have at least two selectable videos.
+          - Expand a per-scene breakdown for exact-scene videos and same-character backup candidates.
+          - When fewer than two exact clips fit a scene, offer other artworks from that same character theme and the same screen orientation. The optional feature is enabled by default and can be disabled.
+          - Charging, night and other scenes label same-character backups honestly; backup selection never claims to be scene-specific.
+          - Gallery catalog v13 adds two separate Shin-chan creator source pages: Flashlight Search and Cherry Blossom Bubbles. These require individual publisher download and user-controlled import, and do NOT inflate the number of auto-recommendable clips.
+          - Existing Conan landscape originals (2), Shin-chan portrait originals (8), Doraemon distinct originals (3, with 5 orientation variants) remain available.
+          - Existing user scene assignments, liked/disliked state, saved media, cache and undo history preserved.
+          - Publisher source video files are never redistributed via GitHub. Actual Fold8 playback and publisher downloads require on-device checking.
+
+          Source commit: c22c622a7eb94e1951ec2941da1007d77ba64f9c
+          APK SHA256: 1e210325ca51cda0cc7eb17b63fd1b588e3596de938c4d2a73035ecf25b9264c
+          EOF
+          gh release create v64 PocketFoldLive.apk --title "PocketFoldLive v0.26.0 (64)" --notes-file RELEASE_NOTES.md --latest
