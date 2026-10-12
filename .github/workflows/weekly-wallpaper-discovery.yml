@@ -1,0 +1,42 @@
+name: Weekly verified wallpaper discovery
+on:
+  schedule:
+    - cron: "0 1 * * 1"
+  workflow_dispatch:
+  push:
+    paths:
+      - ".github/workflows/weekly-wallpaper-discovery.yml"
+permissions:
+  contents: write
+concurrency:
+  group: weekly-wallpaper-discovery
+  cancel-in-progress: false
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install HTML reader
+        run: python -m pip install requests==2.32.3 beautifulsoup4==4.12.3
+      - name: Validate discovery parser
+        run: python scripts/refresh_catalog.py --self-test
+      - name: Discover compatible new original videos
+        run: python scripts/refresh_catalog.py
+      - name: Commit verified new links and metadata
+        run: |
+          set -euo pipefail
+          if git diff --quiet -- wallpapers/catalog-v9.json; then
+            echo "No new validated artwork found this week."
+            exit 0
+          fi
+          git config user.name "pocketfoldlive-catalog-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add wallpapers/catalog-v9.json
+          git commit -m "Weekly verified original wallpaper links"
+          git push origin HEAD:main
