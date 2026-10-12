@@ -35,4 +35,16 @@ jobs:
                   print(name,"HTTP",response.status,"items",len(items),"sample",[(v.get("data",[{}])[0].get("title"),v.get("href")) for v in items[:3]])
             except Exception as e:
               print(name,"FAILED",type(e).__name__,str(e)[:160])
+          import requests
+          for query in ["aurora", "earth timelapse", "moon", "galaxy animation"]:
+            try:
+              data=requests.get("https://images-api.nasa.gov/search",params={"q":query,"media_type":"video","page_size":6},timeout=20).json()
+              print("NASA QUERY",query)
+              for v in data.get("collection",{}).get("items",[])[:4]:
+                meta=v.get("data",[{}])[0]
+                files=requests.get(v["href"],timeout=20).json()
+                mp4=[x for x in files if x.lower().split("?")[0].endswith(".mp4")]
+                print("NASA ASSET",str(meta.get("title"))[:70],str(meta.get("nasa_id"))[:60],len(mp4),str(mp4[:4])[:470])
+            except Exception as e:
+              print("NASA DETAIL FAILED",type(e).__name__,str(e)[:120])
           PY
