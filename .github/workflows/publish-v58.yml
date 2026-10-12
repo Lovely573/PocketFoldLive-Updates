@@ -1,0 +1,41 @@
+name: Publish PocketFoldLive v58 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v58.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download source-CI signed APK and verify SHA256
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-6c54-820b-8942-5da8f7615734/raw?se=2026-10-12T05%3A42%3A02Z&sp=r&sv=2026-02-06&sr=b&scid=b8635684-2f41-5ff0-a790-4f5ce205d07c&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T01%3A15%3A45Z&ske=2026-10-13T01%3A15%3A45Z&sks=b&skv=2026-02-06&sig=AfSlLQO7pnTFN17NxZVgMx10qZnG2IfflbYBgB2K%2BUQ%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo 'baece9a71e0ba72cc17117f2b766bc22f36e5dc4326707dd6e4baaed5d9bef85  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish signed v58 release with Korean notes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > RELEASE_NOTES.md <<'RELEASE_NOTES'
+          ## PocketFoldLive 0.23.0 · 빌드 58
+
+          - 선택한 UI Preview E를 바탕으로 다크 블루 디자인과 4개 하단 탭(홈·갤러리·AI 찾기·설정)을 도입했습니다.
+          - 홈은 빠른 실행, 현재 배경화면 상태, 새 영상 알림, 업데이트 정보 중심으로 정리했습니다.
+          - 갤러리에서 접힘·펼침·가로 화면과 8가지 상황을 카드 형태로 선택할 수 있습니다.
+          - 추천 영상, 좋아요한 영상(즐겨찾기), 내 영상 직접 선택이 더 쉽게 연결됩니다.
+          - AI 검색 화면에 일관된 카드 스타일과 추천 키워드 바로가기를 추가했습니다.
+          - 기존 라이브 배경화면 설정, 충전/야간/배터리 동작, 영상 목록, 좋아요·싫어요, ChatGPT 프로젝트 연결 및 버전 정보 기능은 유지됩니다.
+
+          휴대폰에서 실제 화면 전환 및 배경화면 적용 동작을 확인해주세요. UI 목업 이미지와 실제 배치는 차이가 있을 수 있습니다.
+          소스 커밋: 1f71dda684ee92068a33171355ef50c023d53743
+          APK SHA256: baece9a71e0ba72cc17117f2b766bc22f36e5dc4326707dd6e4baaed5d9bef85
+          RELEASE_NOTES
+          gh release create v58 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.23.0 (58)" --notes-file RELEASE_NOTES.md --latest
