@@ -1,0 +1,40 @@
+name: Publish PocketFoldLive v59 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v59.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed APK and check artifact SHA256
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-72f4-820b-bd7c-f1be7dd9d704/raw?se=2026-10-12T05%3A57%3A22Z&sp=r&sv=2026-02-06&sr=b&scid=c65aab68-1646-5924-9b0e-90ff9dde4fa4&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T05%3A38%3A49Z&ske=2026-10-13T05%3A38%3A49Z&sks=b&skv=2026-02-06&sig=7qTpqV2ydS5q8vRV85qIniYgVsYY1des42/Y7j29Ge8%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '6c4cb487bc69cef93c983069ab7bb2208d2edd87de448e03a198b410998953ab  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish Korean release notes and verified v59 APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > RELEASE_NOTES.md <<'RELEASE_NOTES'
+          ## PocketFoldLive 0.23.1 · 빌드 59
+
+          - 설명 문구와 버튼 사이 간격을 늘리고 글줄 간격을 정리했습니다.
+          - 홈 ‘현재 배경화면’ 카드와 갤러리 상단에 ‘상황별 영상 전체 보기’를 추가했습니다.
+          - 접힘·펼침·가로 화면마다 평상시·충전 시작·충전 중·충전 완료·배터리 부족·야간 등 현재 지정된 원본을 확인할 수 있습니다.
+          - 각 상황별 파일명, 썸네일, 직접 등록·대체 재생·미설정·파일 없음 상태를 구분합니다.
+          - 항목별 미리보기와 ‘변경하기’ 버튼을 지원합니다. 미리보기는 설정을 바꾸지 않으며 파일을 자동 다운로드하지 않습니다.
+          - 기존 배경화면 영상 설정·좋아요/싫어요·ChatGPT 프로젝트 연결·업데이트 알림 기능을 유지합니다.
+
+          Fold8 실기기에서 영상 미리보기와 화면 전환을 확인해 주세요.
+          소스 커밋: c5b5f4c551c637353fc9ebe8f5e611b37b2f53af
+          APK SHA256: 6c4cb487bc69cef93c983069ab7bb2208d2edd87de448e03a198b410998953ab
+          RELEASE_NOTES
+          gh release create v59 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.23.1 (59)" --notes-file RELEASE_NOTES.md --latest
