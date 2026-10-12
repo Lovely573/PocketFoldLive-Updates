@@ -24,7 +24,7 @@ MAX_NEW = 4
 MAX_SIZE = 70_000_000
 QUERIES = ["aurora", "earth timelapse", "nebula animation", "northern lights", "galaxy visualization"]
 GOOD = re.compile(r"aurora|timelapse|time.lapse|animation|visualization|nebula|earth from|northern lights|night lights|space view", re.I)
-BAD = re.compile(r"podcast|webcast|lecture|explainer|interview|episode|news|live:|live stream|q&a|press conference|rocket launch|rollout|report|talk|briefing|behind the scenes|science live|tutorial|copyright", re.I)
+BAD = re.compile(r"podcast|webcast|lecture|explainer|interview|episode|asked|expert|arrival|core stage|rocket|rollout|launch|astronaut|speech|presentation|report|news|live:|live stream|q&a|press conference|rocket launch|rollout|report|talk|briefing|behind the scenes|science live|tutorial|copyright", re.I)
 HEADERS = {"User-Agent": "PocketFoldLive wallpaper discovery/1.0 (github.com/Lovely573/PocketFoldLive-Updates)"}
 
 
