@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v51 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v51.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch signed v51 APK and verify digest
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-1eb0-820b-a524-16920c6b653a/raw?se=2026-10-12T02%3A53%3A29Z&sp=r&sv=2026-02-06&sr=b&scid=3503701d-4928-590b-b223-67448cef95ac&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T02%3A31%3A36Z&ske=2026-10-13T02%3A31%3A36Z&sks=b&skv=2026-02-06&sig=T2VCN423iemluqiWh/tncPbdgtPP4JyjE5KUyafVJ3g%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '94063ecc2576bb2debd69a051460372984a07d610d21d5c2bcc005a61827c6c2  PocketFoldLive.apk' | sha256sum --check -
+      - name: Release v51 for in-app update dialog
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v51 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.20.2 (51)" \
+            --notes "v51 / 0.20.2 fixes scroll preview flickering caused by frequent ExoPlayer Surface teardown. Offscreen players now pause and a bounded warm cache reuses up to three player instances. Adds best-effort app relaunch after user-approved installation using MY_PACKAGE_REPLACED with an update-complete notification fallback on Android devices restricting background activity launches. Existing saved wallpapers, taste profile, and 124-video catalog remain untouched. Android unit tests, release build, original private signing, signature verification and signed artifact upload passed. Automatic foreground relaunch and actual Fold8 scrolling must be checked on device because Android can restrict background launches. Source commit 9d4fba5ef81bb4342aef7ece7b9625a755199d5c. APK SHA256 94063ecc2576bb2debd69a051460372984a07d610d21d5c2bcc005a61827c6c2. Signer certificate SHA256 6ae796f34679053575a93b19e5809a36e087334651efbba9413b1bb181487ba7 matches v50." \
+            --latest
