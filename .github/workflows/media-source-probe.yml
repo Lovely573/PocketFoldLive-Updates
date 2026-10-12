@@ -1,0 +1,38 @@
+name: Probe open media discovery APIs
+on:
+  push:
+    paths:
+      - ".github/workflows/media-source-probe.yml"
+permissions:
+  contents: read
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check documented open media APIs
+        run: |
+          python - <<'PY'
+          import urllib.parse,urllib.request,json
+          sources=[
+            ("commons_mp4", "https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode({"action":"query","format":"json","generator":"search","gsrsearch":"filemime:video/mp4 cat","gsrnamespace":"6","gsrlimit":"5","prop":"imageinfo","iiprop":"url|size|mime|extmetadata"})),
+            ("commons_webm", "https://commons.wikimedia.org/w/api.php?"+urllib.parse.urlencode({"action":"query","format":"json","generator":"search","gsrsearch":"filemime:video/webm cat","gsrnamespace":"6","gsrlimit":"5","prop":"imageinfo","iiprop":"url|size|mime|extmetadata"})),
+            ("nasa", "https://images-api.nasa.gov/search?"+urllib.parse.urlencode({"q":"aurora","media_type":"video","page_size":"5"})),
+          ]
+          for name,url in sources:
+            try:
+              req=urllib.request.Request(url,headers={"User-Agent":"PocketFoldLive-personal-open-media-browser/1.0 (github.com/Lovely573/PocketFoldLive-Updates; contact via GitHub issues)","Accept":"application/json"})
+              with urllib.request.urlopen(req,timeout=20) as response:
+                body=json.load(response)
+                if name.startswith("commons"):
+                  pages=body.get("query",{}).get("pages",{})
+                  print(name,"HTTP",response.status,"pages",len(pages),"sample",[(v.get("title"),v.get("imageinfo",[{}])[0].get("mime"),v.get("imageinfo",[{}])[0].get("url")) for v in list(pages.values())[:3]],"error",body.get("error"))
+                else:
+                  items=body.get("collection",{}).get("items",[])
+                  print(name,"HTTP",response.status,"items",len(items),"sample",[(v.get("data",[{}])[0].get("title"),v.get("href")) for v in items[:3]])
+            except Exception as e:
+              print(name,"FAILED",type(e).__name__,str(e)[:160])
+          PY
