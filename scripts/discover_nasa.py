@@ -72,6 +72,7 @@ def characteristics(session, url, expected_size):
         with session.get(url, headers=HEADERS, stream=True, timeout=40) as response:
             response.raise_for_status()
             if not secure_url(response.url):
+                print("NASA full download redirected away:", response.url[:150])
                 return None
             with open(name, "wb") as target:
                 for chunk in response.iter_content(chunk_size=128 * 1024):
@@ -80,6 +81,7 @@ def characteristics(session, url, expected_size):
                         return None
                     target.write(chunk)
         if abs(total - expected_size) > 128:
+            print("NASA full download length mismatch:", total, expected_size, url[-60:])
             return None
         p = subprocess.run(
             ["ffprobe", "-v", "error", "-show_entries", "stream=codec_type,width,height:format=duration",
