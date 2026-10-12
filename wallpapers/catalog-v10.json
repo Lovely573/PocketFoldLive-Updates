@@ -1,6 +1,6 @@
 {
   "schemaVersion": 9,
-  "updatedAt": "2026-10-12",
+  "updatedAt": "2026-10-12T04:34:11.951292+00:00",
   "description": "PocketFoldLive curated external-source wallpaper catalog. 124 video variants; circuit-board clips are excluded from default recommendations. Portrait/landscape variants share artworkKey where known.",
   "items": [
     {
@@ -3541,6 +3541,115 @@
         "character"
       ],
       "artworkKey": "motionbgs:2945"
+    },
+    {
+      "id": "nasa-auto-ca46f27c0cb921e6",
+      "title": "NASA · The Aurora Named STEVE",
+      "category": "우주·자연",
+      "description": "NASA 원본 영상 · 개인용 우주/자연 배경 · 133초 · 출처 확인 가능",
+      "url": "https://images-assets.nasa.gov/video/GSFC_20180314_Aurora_m12865_Steve/GSFC_20180314_Aurora_m12865_Steve~medium.mp4",
+      "sourcePage": "https://images.nasa.gov/details/GSFC_20180314_Aurora_m12865_Steve",
+      "approxMB": 37.27,
+      "mime": "video/mp4",
+      "width": 1280,
+      "height": 720,
+      "credit": "NASA Image and Video Library · 영상 원본 사이트",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "원본 영상",
+      "quality": "MP4 · 1280×720 · 원본 크기/재생 길이 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "background",
+        "calm",
+        "space"
+      ],
+      "artworkKey": "nasa:GSFC_20180314_Aurora_m12865_Steve",
+      "recommendationGroup": "우주·자연"
+    },
+    {
+      "id": "nasa-auto-dab7e2355a46ef20",
+      "title": "NASA · How Can I See the Northern Lights? We Asked a NASA Expert",
+      "category": "우주·자연",
+      "description": "NASA 원본 영상 · 개인용 우주/자연 배경 · 103초 · 출처 확인 가능",
+      "url": "https://images-assets.nasa.gov/video/How%20Can%20I%20See%20the%20Northern%20Lights/How%20Can%20I%20See%20the%20Northern%20Lights~medium.mp4",
+      "sourcePage": "https://images.nasa.gov/details/How%20Can%20I%20See%20the%20Northern%20Lights",
+      "approxMB": 29.34,
+      "mime": "video/mp4",
+      "width": 1280,
+      "height": 720,
+      "credit": "NASA Image and Video Library · 영상 원본 사이트",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "원본 영상",
+      "quality": "MP4 · 1280×720 · 원본 크기/재생 길이 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "background",
+        "calm",
+        "space"
+      ],
+      "artworkKey": "nasa:How Can I See the Northern Lights",
+      "recommendationGroup": "우주·자연"
+    },
+    {
+      "id": "nasa-auto-b09e80396b79cf9b",
+      "title": "NASA · Artemis III Core Stage Arrival at VAB Timelapse",
+      "category": "우주·자연",
+      "description": "NASA 원본 영상 · 개인용 우주/자연 배경 · 134초 · 출처 확인 가능",
+      "url": "https://images-assets.nasa.gov/video/KSC-20260428-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_VAB_Timelapse-WON_M20626_1/KSC-20260428-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_VAB_Timelapse-WON_M20626_1~medium.mp4",
+      "sourcePage": "https://images.nasa.gov/details/KSC-20260428-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_VAB_Timelapse-WON_M20626_1",
+      "approxMB": 40.17,
+      "mime": "video/mp4",
+      "width": 1080,
+      "height": 608,
+      "credit": "NASA Image and Video Library · 영상 원본 사이트",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "원본 영상",
+      "quality": "MP4 · 1080×608 · 원본 크기/재생 길이 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "background",
+        "calm",
+        "space"
+      ],
+      "artworkKey": "nasa:KSC-20260428-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_VAB_Timelapse-WON_M20626_1",
+      "recommendationGroup": "우주·자연"
+    },
+    {
+      "id": "nasa-auto-08c3363d59e54a04",
+      "title": "NASA · Artemis III Core Stage Arrival at KSC Timelapse",
+      "category": "우주·자연",
+      "description": "NASA 원본 영상 · 개인용 우주/자연 배경 · 173초 · 출처 확인 가능",
+      "url": "https://images-assets.nasa.gov/video/KSC-20260427-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_KSC_Timelapse-WON_M20626/KSC-20260427-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_KSC_Timelapse-WON_M20626~medium.mp4",
+      "sourcePage": "https://images.nasa.gov/details/KSC-20260427-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_KSC_Timelapse-WON_M20626",
+      "approxMB": 51.73,
+      "mime": "video/mp4",
+      "width": 1080,
+      "height": 608,
+      "credit": "NASA Image and Video Library · 영상 원본 사이트",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "원본 영상",
+      "quality": "MP4 · 1080×608 · 원본 크기/재생 길이 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "background",
+        "calm",
+        "space"
+      ],
+      "artworkKey": "nasa:KSC-20260427-RV-FMX01_Artemis_III_Core_Stage_Arrival_at_KSC_Timelapse-WON_M20626",
+      "recommendationGroup": "우주·자연"
     }
   ]
 }
