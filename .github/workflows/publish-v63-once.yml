@@ -1,0 +1,40 @@
+name: Publish signed build 63 once
+on:
+  push:
+    paths: [".github/workflows/publish-v63-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch the CI-verified signed APK
+        env:
+          ARTIFACT_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-637c-820b-a289-b7540bca9961/raw?se=2026-10-12T08%3A23%3A15Z&sp=r&sv=2026-02-06&sr=b&scid=1310466a-ec48-57d8-9b5a-2d7d3d0758a7&skoid=27fbae2c-124f-4566-a0d8-1b07a5a41c53&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T01%3A53%3A17Z&ske=2026-10-13T01%3A53%3A17Z&sks=b&skv=2026-02-06&sig=Zo2AAEEH0uPGyl%2BA7Naw2YFWch%2BaAwdYc%2BmtA7nR6ms%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "d756c2c76d6ac218d37c61c98415ad8284be305348a71771edddcbb4b57b270c  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+
+      - name: Publish update for existing install
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.25.1 · Build 63
+
+          - Original-source catalog v12 now includes an independent Detective Conan + Ai Haibara MP4 (FHD) from DesktopHut, in addition to the existing Conan MotionBGS original.
+          - AI search now recognizes DesktopHut and MotionBGS source links and offers preview and personal-use import.
+          - Paste one of the MINUHOME Shin-chan original posts to choose its four different publicly shared MP4 attachments; eight remain in the catalog.
+          - Doraemon cover and unfolded scenes retain the existing five orientation variants.
+          - Actual MP4 headers and video dimensions are inspected on-device before Apply; source-host playback can vary.
+          - Existing wallpapers, thumbs-up/down, theme layout, previous arrangement restore and cache controls remain unchanged.
+          - Preserves catalog v11 for older build 62 users. No third-party copyrighted video bytes are hosted on GitHub.
+
+          Source commit: 7c17dd5c261554116c0ea55a4d56219a83d0f715
+          APK SHA256: d756c2c76d6ac218d37c61c98415ad8284be305348a71771edddcbb4b57b270c
+          EOF
+          gh release create v63 PocketFoldLive.apk --title "PocketFoldLive v0.25.1 (63)" --notes-file RELEASE_NOTES.md --latest
