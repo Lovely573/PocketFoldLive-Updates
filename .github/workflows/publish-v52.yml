@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v52 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v52.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch signed APK and validate SHA256
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-3cbc-820b-913c-2912ee6aca52/raw?se=2026-10-12T03%3A04%3A03Z&sp=r&sv=2026-02-06&sr=b&scid=446e257e-bbdf-58af-88c8-28d8dda8b1c8&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T01%3A15%3A25Z&ske=2026-10-13T01%3A15%3A25Z&sks=b&skv=2026-02-06&sig=5dQiS8rwPWQwRHIiaafyAsVGqbDxjlMDQuMv2oqBS7I%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '57d2d389b9d92742d78a41b7c9a1817ba98be92cb24ec112699204daa7711fe4  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish v52 public APK for in-app updater
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v52 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.20.3 (52)" \
+            --notes "v52 / 0.20.3: Fix live preview flicker when scrolling recommendation overview or detail. Preview PlayerViews now use TextureView instead of default SurfaceView, with playback target changes deferred until 220 ms after the last scroll. Player reuse from v51 remains. Existing wallpapers, taste profile, and 124-item video catalog unchanged. Source commit 6024307cb6f35beff678e22e916c6c5e377673af. CI unit tests, Android release build, original private signing and artifact upload passed. Device-side Fold8 scrolling verification is still required. APK SHA256: 57d2d389b9d92742d78a41b7c9a1817ba98be92cb24ec112699204daa7711fe4." \
+            --latest
