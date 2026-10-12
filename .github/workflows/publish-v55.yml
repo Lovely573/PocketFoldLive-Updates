@@ -1,0 +1,41 @@
+name: Publish PocketFoldLive v55 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v55.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and hash-verify signed APK
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-3c18-820b-8e33-9431b3a7c283/raw?se=2026-10-12T04%3A40%3A14Z&sp=r&sv=2026-02-06&sr=b&scid=78850f23-6b46-5c49-9b6b-7ecc81937eea&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T00%3A41%3A35Z&ske=2026-10-13T00%3A41%3A35Z&sks=b&skv=2026-02-06&sig=YHDMEXCqzEg4/YSQ2eomvnUHoy1mIdFKWGx5NxTxJnk%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          echo 'ac7a7b1c44fb4129d168aafa36d8e6c75daeafb28e4c96557bf58721547ff1a8  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish v55
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > RELEASE_NOTES.md <<'RELEASE_NOTES'
+          v55 / 0.21.1: Add independently versioned wallpaper catalog v10 and support for
+          HTTPS NASA Image and Video Library MP4 references (no media rehosting).
+          Verified suitable HD wide videos may be discovered weekly by GitHub Actions
+          and appear in app without further APK updates. Original content is
+          still downloaded only on user selection. Current v9 catalog and older
+          app installations are isolated from the new provider.
+          Wallpaper video playback already pauses when not visible; weekly
+          catalog checks fetch metadata only, with low expected battery cost.
+          MotionBGS GitHub Actions HTML discovery remains HTTP 403; no bypass.
+          The connected NASA source offers space and natural footage, not
+          copyrighted animated character clips, which remain in the existing catalog.
+          Build and Android tests passed; actual Fold8 playback requires device testing.
+          Source commit 76f4b2ca8c3db3a569c94fea36ccdeeece147f1d.
+          SHA256 ac7a7b1c44fb4129d168aafa36d8e6c75daeafb28e4c96557bf58721547ff1a8
+          RELEASE_NOTES
+          gh release create v55 PocketFoldLive.apk --repo "${{ github.repository }}" --title "PocketFoldLive v0.21.1 (55)" --notes-file RELEASE_NOTES.md --latest
