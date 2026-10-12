@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v47 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v47.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed v47 and verify exact APK digest
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-6f04-820b-a0e3-ace5f1d8fdd6/raw?se=2026-10-12T01%3A07%3A17Z&sp=r&sv=2026-02-06&sr=b&scid=351d70dc-8db3-50a4-97bd-6c73a69877c4&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T22%3A10%3A24Z&ske=2026-10-12T22%3A10%3A24Z&sks=b&skv=2026-02-06&sig=EmlEF3PU690MfcmVlUYhOFAv6ll44wzo3TjEHyarBnA%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo 'e99a4552f8695e22a49e521f24847ac18aa7d7758cb373a596362e245684ecc2  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish v47 signed APK for app startup update checks
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v47 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.19.3 (47)" \
+            --notes "Replaces the misunderstood single-overview-player design with an all-scenarios video overview. Each auto-preset situation (normal, charge start/charging/full, low/critical battery, night, and unfolded as appropriate) has its own inline movie preview card plus a direct Change Video button. Fold cover shows one full-width card per row, inner screen two per row; scroll through the entire overview without switching scenarios. Selected original publisher MP4s download as needed with two bounded background workers and locally cached video still frames. Up to two currently visible cards loop video simultaneously with muted Media3 ExoPlayer; other cards retain real media frames to avoid hardware decoder exhaustion, and scrolling activates visible previews. Individual advanced selection and one/four suggestion view, existing video choices, batch apply, publisher-linked 89 video catalog and system-bar insets remain. Android unit tests, Android release build and private signing passed for source dcd2b0b016f2121f41bf19cf8408c81c485f2a38. Signed APK SHA-256 e99a4552f8695e22a49e521f24847ac18aa7d7758cb373a596362e245684ecc2. Physical Galaxy Fold8 validation still required." \
+            --latest
