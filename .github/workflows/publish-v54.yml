@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v54 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v54.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download and verify original signed APK
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-b264-820b-a199-2734a9cad83f/raw?se=2026-10-12T04%3A20%3A30Z&sp=r&sv=2026-02-06&sr=b&scid=43e78005-dcb7-5ace-ac98-bf9369eaa25f&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T22%3A41%3A48Z&ske=2026-10-12T22%3A41%3A48Z&sks=b&skv=2026-02-06&sig=Byi/tew2yEhwHEr6AmoxXheBeL4IAshhaqct4xTMZ70%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '3908ba3f9d246cb00b1d29e7f1db5d8db055ac278558012da66e7a6ac13a6f0d  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish signed v54 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v54 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.21.0 (54)" \
+            --notes "v54 / 0.21.0 - New wallpaper discovery alerts. The app schedules a network-constrained weekly catalog check, detects new unique artworks after the first baseline check, excludes disliked artworks, and displays a system notification when permitted. On next app opening it shows a "new wallpapers" dialog; a manual check button is available in Settings. Media files are not bundled or redistributed, and applied wallpapers are preserved. Public repository includes a scheduled discovery script for original MotionBGS links with HTTP+MP4 header checks and duplicate prevention. IMPORTANT: first GitHub Actions source discovery received HTTP 403 from MotionBGS listing pages; that discovery job currently cannot add new items until source access is available or a permitted alternate provider is added. Therefore this build implements checking and notifications, but does not guarantee weekly new videos. Unit tests, build, signed release and signer verification passed. Source c38e1bcd3e2b83f8ba192df7d91fadedd6354071. APK SHA-256 3908ba3f9d246cb00b1d29e7f1db5d8db055ac278558012da66e7a6ac13a6f0d." \
+            --latest
