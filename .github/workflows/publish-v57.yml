@@ -1,0 +1,38 @@
+name: Publish PocketFoldLive v57 signed APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v57.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download signed APK and verify SHA256
+        env:
+          ARTIFACT_URL: 'https://sdmntprnznorth.oaiusercontent.com/files/00000000-4f5c-820b-9a3e-62c3a322cb27/raw?se=2026-10-12T05%3A09%3A31Z&sp=r&sv=2026-02-06&sr=b&scid=6396056c-912b-54d5-842b-17b1e604cbbd&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T22%3A50%3A36Z&ske=2026-10-12T22%3A50%3A36Z&sks=b&skv=2026-02-06&sig=VnD2hi9weoOwTnu8gJ6lR18FphBLmFL0Ja%2B2U%2BYGG6k%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '2af4726fc1cae27f90e77623a349b121cf18830ae7e88fc1307645c6fc96e651  PocketFoldLive.apk' | sha256sum --check -
+      - name: Release v57 APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          cat > RELEASE_NOTES.md <<'NOTES'
+          - 앱의 ‘AI로 새 캐릭터 영상 찾기’ 기능 추가: 캐릭터·화면비율·분위기 조건으로 ChatGPT 질문 생성.
+          - 좋아요·싫어요 작품 정보를 선택적으로 질문에 포함하고 복사할 수 있습니다.
+          - 기존 ‘라이브 배경화면’ ChatGPT 프로젝트 주소를 한 번 저장해 프로젝트를 바로 열 수 있습니다.
+          - 설정의 ‘앱 정보’에서 정식 앱 버전, 빌드 번호, 영상 목록 갱신일, 변경 내역을 확인할 수 있습니다.
+          - 버전 표기를 0.22.0 (빌드 57)으로 갱신. 기존 영상·개인 설정은 그대로 유지됩니다.
+
+          사용 안내: 프로젝트에서 새 채팅을 직접 시작하고 복사된 질문을 붙여넣으세요. ChatGPT 프로젝트 새 대화의 자동 생성이나 자동 메시지 전송은 제공하지 않습니다. 자동 GitHub 영상 업로드도 하지 않습니다.
+          소스: c785b10995349963943dce6569f22fd86a62789f
+          APK SHA256: 2af4726fc1cae27f90e77623a349b121cf18830ae7e88fc1307645c6fc96e651
+          NOTES
+          gh release create v57 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.22.0 (57)" --notes-file RELEASE_NOTES.md --latest
