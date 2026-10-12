@@ -1,7 +1,7 @@
 {
   "schemaVersion": 9,
   "updatedAt": "2026-10-12",
-  "description": "95 creator-linked original video variants. Personal-use source downloads only; no rehosting. tasteTags power preference-based sorting; orientation and scene eligibility remain strict.",
+  "description": "PocketFoldLive curated external-source wallpaper catalog. 124 video variants; circuit-board clips are excluded from default recommendations. Portrait/landscape variants share artworkKey where known.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -447,7 +447,8 @@
         "energy",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:3128"
     },
     {
       "id": "motion-pika-loading-wide",
@@ -475,7 +476,8 @@
         "energy",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:3128"
     },
     {
       "id": "motion-snorlax-night",
@@ -503,7 +505,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1998"
     },
     {
       "id": "motion-gengar-night-portrait",
@@ -531,7 +534,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:6095"
     },
     {
       "id": "motion-umbreon-night-wide",
@@ -558,7 +562,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1997"
     },
     {
       "id": "motion-scorbunny-full",
@@ -585,7 +590,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1994"
     },
     {
       "id": "motion-pink-sakura-portrait",
@@ -612,7 +618,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1554"
     },
     {
       "id": "motion-pink-sakura-wide",
@@ -639,7 +646,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1554"
     },
     {
       "id": "motion-pika-rain",
@@ -653,17 +661,23 @@
       "width": 720,
       "height": 1280,
       "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
-      "recommendedScenes": [],
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
       "orientation": "세로",
       "style": "2D/3D",
       "quality": "HD (720×1280)",
-      "recommendable": false,
+      "recommendable": true,
       "tasteTags": [
         "pokemon",
         "calm",
         "2d",
-        "character"
-      ]
+        "character",
+        "cute"
+      ],
+      "artworkKey": "motionbgs:6006"
     },
     {
       "id": "motion-pika-rest",
@@ -691,7 +705,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7124"
     },
     {
       "id": "motion-pika-bulba-wide",
@@ -718,7 +733,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:4338"
     },
     {
       "id": "motion-gengar-wide",
@@ -746,7 +762,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:6890"
     },
     {
       "id": "motion-snorlax-wide",
@@ -774,7 +791,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1998"
     },
     {
       "id": "motion-more-arceus-pokemon",
@@ -803,7 +821,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7706"
     },
     {
       "id": "motion-more-kyogre-pokemon",
@@ -829,7 +848,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:4315"
     },
     {
       "id": "motion-more-totoro-neighbor",
@@ -855,7 +875,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:7730"
     },
     {
       "id": "motion-more-totoro-tree",
@@ -881,7 +902,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:135"
     },
     {
       "id": "motion-more-doraemon-nature",
@@ -906,7 +928,8 @@
         "character",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:8095"
     },
     {
       "id": "motion-more-kuromi-space",
@@ -933,7 +956,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1724"
     },
     {
       "id": "motion-more-kuromi-rain",
@@ -961,7 +985,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1728"
     },
     {
       "id": "motion-more-kuromi-spooky",
@@ -990,7 +1015,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1730"
     },
     {
       "id": "motion-more-sanrio-space",
@@ -1016,7 +1042,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:3279"
     },
     {
       "id": "motion-more-snoopy-snow-night",
@@ -1042,7 +1069,8 @@
         "dark",
         "calm",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:8318"
     },
     {
       "id": "motion-more-corgi-sleeping",
@@ -1070,7 +1098,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:5685"
     },
     {
       "id": "motion-more-healing-cat-cafe",
@@ -1097,7 +1126,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:8036"
     },
     {
       "id": "motion-more-cinnamoroll-flying",
@@ -1124,7 +1154,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1732"
     },
     {
       "id": "motion-more-cinnamoroll-clouds",
@@ -1151,7 +1182,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1733"
     },
     {
       "id": "motion-more-hello-kitty-cloud",
@@ -1178,7 +1210,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1722"
     },
     {
       "id": "motion-more-arceus-pokemon-wide",
@@ -1207,7 +1240,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7706"
     },
     {
       "id": "motion-more-kyogre-pokemon-wide",
@@ -1234,7 +1268,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:4315"
     },
     {
       "id": "motion-more-totoro-neighbor-wide",
@@ -1261,7 +1296,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:7730"
     },
     {
       "id": "motion-more-doraemon-nature-wide",
@@ -1287,7 +1323,8 @@
         "character",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:8095"
     },
     {
       "id": "motion-more-kuromi-space-wide",
@@ -1314,7 +1351,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1724"
     },
     {
       "id": "motion-more-kuromi-rain-wide",
@@ -1342,7 +1380,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1728"
     },
     {
       "id": "motion-more-cinnamoroll-flying-wide",
@@ -1369,7 +1408,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1732"
     },
     {
       "id": "motion-more-kuromi-spooky-wide",
@@ -1398,7 +1438,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1730"
     },
     {
       "id": "quality-arcanine-friends-portrait",
@@ -1425,7 +1466,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:183"
     },
     {
       "id": "quality-arcanine-friends-wide",
@@ -1452,7 +1494,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:183"
     },
     {
       "id": "quality-lucario-energy-portrait",
@@ -1482,7 +1525,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:8843"
     },
     {
       "id": "quality-lucario-energy-wide",
@@ -1512,7 +1556,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:8843"
     },
     {
       "id": "quality-rayquaza-night-portrait",
@@ -1540,7 +1585,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1039"
     },
     {
       "id": "quality-rayquaza-night-wide",
@@ -1568,7 +1614,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1039"
     },
     {
       "id": "quality-wooloo-calm-portrait",
@@ -1596,7 +1643,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:9042"
     },
     {
       "id": "quality-wooloo-calm-wide",
@@ -1624,7 +1672,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:9042"
     },
     {
       "id": "quality-pokemons-sleeping-wide",
@@ -1652,7 +1701,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:2945"
     },
     {
       "id": "new-cinnamoroll-sweets-portrait",
@@ -1680,7 +1730,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1734"
     },
     {
       "id": "new-cinnamoroll-sweets-wide",
@@ -1708,7 +1759,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1734"
     },
     {
       "id": "new-devil-kuromi-portrait",
@@ -1736,7 +1788,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1725"
     },
     {
       "id": "new-devil-kuromi-wide",
@@ -1764,7 +1817,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1725"
     },
     {
       "id": "new-cinnamoroll-kiss-portrait",
@@ -1792,7 +1846,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1731"
     },
     {
       "id": "new-cinnamoroll-kiss-wide",
@@ -1820,7 +1875,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1731"
     },
     {
       "id": "new-cinnamoroll-in-ocean-portrait",
@@ -1848,7 +1904,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1098"
     },
     {
       "id": "new-cinnamoroll-in-ocean-wide",
@@ -1876,7 +1933,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1098"
     },
     {
       "id": "new-cat-in-space-portrait",
@@ -1905,7 +1963,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1231"
     },
     {
       "id": "new-cat-in-space-wide",
@@ -1934,7 +1993,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:1231"
     },
     {
       "id": "new-cat-under-aurora-sky-portrait",
@@ -1962,7 +2022,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:8428"
     },
     {
       "id": "new-cat-under-aurora-sky-wide",
@@ -1990,7 +2051,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:8428"
     },
     {
       "id": "new-garfield-portrait",
@@ -2016,7 +2078,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:4546"
     },
     {
       "id": "new-garfield-wide",
@@ -2042,7 +2105,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:4546"
     },
     {
       "id": "new-garfield-sleeping-portrait",
@@ -2070,7 +2134,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:5683"
     },
     {
       "id": "new-garfield-sleeping-wide",
@@ -2098,7 +2163,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:5683"
     },
     {
       "id": "new-curious-cats-portrait",
@@ -2124,7 +2190,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7662"
     },
     {
       "id": "new-curious-cats-wide",
@@ -2150,7 +2217,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7662"
     },
     {
       "id": "new-curious-little-kitten-portrait",
@@ -2176,7 +2244,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7710"
     },
     {
       "id": "new-curious-little-kitten-wide",
@@ -2202,7 +2271,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:7710"
     },
     {
       "id": "new-cat-near-portal-portrait",
@@ -2230,7 +2300,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:5703"
     },
     {
       "id": "new-cat-near-portal-wide",
@@ -2258,7 +2329,8 @@
         "calm",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:5703"
     },
     {
       "id": "new-house-on-island-spirited-away-portrait",
@@ -2286,7 +2358,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:2404"
     },
     {
       "id": "new-house-on-island-spirited-away-wide",
@@ -2314,7 +2387,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:2404"
     },
     {
       "id": "new-kirby-drifting-in-blue-portrait",
@@ -2341,7 +2415,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:8174"
     },
     {
       "id": "new-kirby-drifting-in-blue-wide",
@@ -2368,7 +2443,8 @@
         "calm",
         "cute",
         "2d"
-      ]
+      ],
+      "artworkKey": "motionbgs:8174"
     },
     {
       "id": "new-cute-corgi-swimming-portrait",
@@ -2396,7 +2472,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:2955"
     },
     {
       "id": "new-cute-corgi-swimming-wide",
@@ -2424,7 +2501,8 @@
         "cute",
         "2d",
         "character"
-      ]
+      ],
+      "artworkKey": "motionbgs:2955"
     },
     {
       "id": "extra-circuit-board-portrait",
@@ -2446,15 +2524,17 @@
       "orientation": "세로",
       "style": "3d",
       "quality": "HD (720×1280)",
-      "recommendable": true,
+      "recommendable": false,
       "tasteTags": [
         "background",
         "electric",
         "energy",
         "cute",
         "3d",
-        "dreamy"
-      ]
+        "dreamy",
+        "circuit"
+      ],
+      "artworkKey": "motionbgs:5332"
     },
     {
       "id": "extra-circuit-board-wide",
@@ -2476,15 +2556,17 @@
       "orientation": "가로",
       "style": "3d",
       "quality": "FHD (1920×1080)",
-      "recommendable": true,
+      "recommendable": false,
       "tasteTags": [
         "background",
         "electric",
         "energy",
         "cute",
         "3d",
-        "dreamy"
-      ]
+        "dreamy",
+        "circuit"
+      ],
+      "artworkKey": "motionbgs:5332"
     },
     {
       "id": "extra-night-sky-portrait",
@@ -2512,7 +2594,8 @@
         "calm",
         "3d",
         "dreamy"
-      ]
+      ],
+      "artworkKey": "motionbgs:3339"
     },
     {
       "id": "extra-night-sky-wide",
@@ -2540,7 +2623,8 @@
         "calm",
         "3d",
         "dreamy"
-      ]
+      ],
+      "artworkKey": "motionbgs:3339"
     },
     {
       "id": "extra-light-up-the-sky-portrait",
@@ -2569,7 +2653,8 @@
         "cute",
         "3d",
         "dreamy"
-      ]
+      ],
+      "artworkKey": "motionbgs:7612"
     },
     {
       "id": "extra-light-up-the-sky-wide",
@@ -2598,7 +2683,864 @@
         "cute",
         "3d",
         "dreamy"
-      ]
+      ],
+      "artworkKey": "motionbgs:7612"
+    },
+    {
+      "id": "v50-rayquaza-dark-sky-portrait",
+      "title": "레쿠쟈 · 어두운 하늘 비행",
+      "url": "https://motionbgs.com/dl/mhd/1039",
+      "sourcePage": "https://motionbgs.com/mobile/rayquaza-flying-in-the-dark-sky",
+      "approxMB": 2.4,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "포켓몬",
+      "description": "어두운 하늘을 가르며 움직이는 레쿠쟈",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1039"
+    },
+    {
+      "id": "v50-rayquaza-dark-sky-wide",
+      "title": "레쿠쟈 · 어두운 하늘 비행 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1039",
+      "sourcePage": "https://motionbgs.com/rayquaza-flying-in-the-dark-sky",
+      "approxMB": 12,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "포켓몬",
+      "description": "어두운 하늘을 가르며 움직이는 레쿠쟈",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1039"
+    },
+    {
+      "id": "v50-pokemon-sakura-portrait",
+      "title": "포켓몬 · 분홍 벚꽃나무",
+      "url": "https://motionbgs.com/dl/mhd/1554",
+      "sourcePage": "https://motionbgs.com/mobile/pink-sakura-tree",
+      "approxMB": 2.9,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "포켓몬",
+      "description": "분홍 벚꽃과 포켓몬이 어우러진 차분한 풍경",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "FULL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "calm",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1554"
+    },
+    {
+      "id": "v50-pokemon-sakura-wide",
+      "title": "포켓몬 · 분홍 벚꽃나무 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1554",
+      "sourcePage": "https://motionbgs.com/pink-sakura-tree",
+      "approxMB": 9.1,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "포켓몬",
+      "description": "분홍 벚꽃과 포켓몬이 어우러진 차분한 풍경",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "FULL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "calm",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1554"
+    },
+    {
+      "id": "v50-kuromi-space-portrait",
+      "title": "쿠로미 · 우주",
+      "url": "https://motionbgs.com/dl/mhd/1724",
+      "sourcePage": "https://motionbgs.com/mobile/kuromi-in-space-hello-kitty",
+      "approxMB": 1.1,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "산리오",
+      "description": "별빛 우주를 배경으로 한 귀여운 쿠로미",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NIGHT"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "energy",
+        "dark",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1724"
+    },
+    {
+      "id": "v50-kuromi-space-wide",
+      "title": "쿠로미 · 우주 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1724",
+      "sourcePage": "https://motionbgs.com/kuromi-in-space-hello-kitty",
+      "approxMB": 4.8,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "산리오",
+      "description": "별빛 우주를 배경으로 한 귀여운 쿠로미",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NIGHT"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "energy",
+        "dark",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1724"
+    },
+    {
+      "id": "v50-devil-kuromi-portrait",
+      "title": "쿠로미 · 데빌",
+      "url": "https://motionbgs.com/dl/mhd/1725",
+      "sourcePage": "https://motionbgs.com/mobile/devil-kuromi-hello-kitty",
+      "approxMB": 1.9,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "산리오",
+      "description": "어두운 분위기와 에너지 연출의 쿠로미",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1725"
+    },
+    {
+      "id": "v50-devil-kuromi-wide",
+      "title": "쿠로미 · 데빌 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1725",
+      "sourcePage": "https://motionbgs.com/devil-kuromi-hello-kitty",
+      "approxMB": 4.2,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "산리오",
+      "description": "어두운 분위기와 에너지 연출의 쿠로미",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1725"
+    },
+    {
+      "id": "v50-sweet-spooky-kuromi-portrait",
+      "title": "쿠로미 · 달콤한 밤",
+      "url": "https://motionbgs.com/dl/mhd/1730",
+      "sourcePage": "https://motionbgs.com/mobile/sweet-and-spooky-kuromi",
+      "approxMB": 1.4,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "산리오",
+      "description": "귀엽고 살짝 으스스한 쿠로미의 밤 분위기",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1730"
+    },
+    {
+      "id": "v50-sweet-spooky-kuromi-wide",
+      "title": "쿠로미 · 달콤한 밤 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1730",
+      "sourcePage": "https://motionbgs.com/sweet-and-spooky-kuromi",
+      "approxMB": 6.1,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "산리오",
+      "description": "귀엽고 살짝 으스스한 쿠로미의 밤 분위기",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1730"
+    },
+    {
+      "id": "v50-cinnamoroll-ocean-portrait",
+      "title": "시나모롤 · 바닷속",
+      "url": "https://motionbgs.com/dl/mhd/1098",
+      "sourcePage": "https://motionbgs.com/mobile/cinnamoroll-in-ocean",
+      "approxMB": 1.3,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "산리오",
+      "description": "잔잔한 바닷속에서 움직이는 시나모롤",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "LOW_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "calm",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1098"
+    },
+    {
+      "id": "v50-cinnamoroll-ocean-wide",
+      "title": "시나모롤 · 바닷속 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/1098",
+      "sourcePage": "https://motionbgs.com/cinnamoroll-in-ocean",
+      "approxMB": 5.7,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "산리오",
+      "description": "잔잔한 바닷속에서 움직이는 시나모롤",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "LOW_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "calm",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1098"
+    },
+    {
+      "id": "v50-pokemon-tower-fire-portrait",
+      "title": "포켓몬 · 불빛 타워",
+      "url": "https://motionbgs.com/dl/mhd/4383",
+      "sourcePage": "https://motionbgs.com/mobile/tower-in-fire-pokemon",
+      "approxMB": 0.8,
+      "width": 720,
+      "height": 1280,
+      "orientation": "세로",
+      "quality": "HD (720×1280)",
+      "category": "포켓몬",
+      "description": "강한 불빛과 포켓몬 분위기를 활용한 위험 배터리용 영상",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:4383"
+    },
+    {
+      "id": "v50-pokemon-tower-fire-wide",
+      "title": "포켓몬 · 불빛 타워 · 펼친 화면",
+      "url": "https://motionbgs.com/dl/hd/4383",
+      "sourcePage": "https://motionbgs.com/tower-in-fire-pokemon",
+      "approxMB": 0,
+      "width": 1920,
+      "height": 1080,
+      "orientation": "가로",
+      "quality": "FHD (1920×1080)",
+      "category": "포켓몬",
+      "description": "강한 불빛과 포켓몬 분위기를 활용한 위험 배터리용 영상",
+      "mime": "video/mp4",
+      "credit": "MotionBGS 원본 링크 · 개인 사용",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CRITICAL_BATTERY"
+      ],
+      "style": "2D/3D",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "energy",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:4383"
+    },
+    {
+      "id": "motion-gengar-night-portrait-wide-v50",
+      "title": "팬텀 · 어두운 밤 · 펼친 화면",
+      "category": "포켓몬",
+      "description": "어두운 밤 분위기 · 세로형 · 움직임이 강할 수 있음",
+      "url": "https://motionbgs.com/dl/hd/6095",
+      "sourcePage": "https://motionbgs.com/gengar-terror",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:6095"
+    },
+    {
+      "id": "motion-umbreon-night-wide-portrait-v50",
+      "title": "블래키 · 보랏빛 야간 · 접힘 화면",
+      "category": "포켓몬",
+      "description": "은은한 야간 분위기의 블래키 · 가로 HD",
+      "url": "https://motionbgs.com/dl/mhd/1997",
+      "sourcePage": "https://motionbgs.com/mobile/pokemon-umbreon-at-night",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "HD (720×1280)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1997"
+    },
+    {
+      "id": "motion-scorbunny-full-wide-v50",
+      "title": "염버니 · 경쾌한 움직임 · 펼친 화면",
+      "category": "포켓몬",
+      "description": "활기찬 세로형 포켓몬 · 충전 완료나 아침용",
+      "url": "https://motionbgs.com/dl/hd/1994",
+      "sourcePage": "https://motionbgs.com/scorbunny-pokemon",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "FULL_BATTERY"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "energy",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1994"
+    },
+    {
+      "id": "motion-pika-rain-wide-v50",
+      "title": "피카츄 · 비 오는 날 · 펼친 화면",
+      "category": "포켓몬",
+      "description": "비 오는 날의 피카츄 · 저녁/평상시 차분한 분위기",
+      "url": "https://motionbgs.com/dl/hd/6006",
+      "sourcePage": "https://motionbgs.com/pikachu-rainy-day-adventure",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "calm",
+        "2d",
+        "character",
+        "cute"
+      ],
+      "artworkKey": "motionbgs:6006"
+    },
+    {
+      "id": "motion-pika-rest-wide-v50",
+      "title": "피카츄 · 따뜻한 휴식 · 펼친 화면",
+      "category": "포켓몬",
+      "description": "온천에서 쉬는 피카츄 · 저녁 시간용",
+      "url": "https://motionbgs.com/dl/hd/7124",
+      "sourcePage": "https://motionbgs.com/pikachu-hot-tub-chilling",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:7124"
+    },
+    {
+      "id": "motion-pika-bulba-wide-portrait-v50",
+      "title": "피카츄와 이상해씨 · 함께 · 접힘 화면",
+      "category": "포켓몬",
+      "description": "두 캐릭터가 등장하는 가로형 · 폴드 펼친 화면 추천",
+      "url": "https://motionbgs.com/dl/mhd/4338",
+      "sourcePage": "https://motionbgs.com/mobile/pikachu-and-bulbasaur",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "NORMAL",
+        "GROUP_UNFOLDED"
+      ],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "HD (720×1280)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:4338"
+    },
+    {
+      "id": "motion-gengar-wide-portrait-v50",
+      "title": "팬텀 · 어둠 속 (펼침) · 접힘 화면",
+      "category": "포켓몬",
+      "description": "야간에 어울리는 가로형 팬텀 영상",
+      "url": "https://motionbgs.com/dl/mhd/6890",
+      "sourcePage": "https://motionbgs.com/mobile/pokemon-gengar",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 다운로드 · 개인 사용",
+      "recommendedScenes": [
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "HD (720×1280)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:6890"
+    },
+    {
+      "id": "motion-more-totoro-tree-wide-v50",
+      "title": "토토로 · 나무 위 · 펼친 화면",
+      "category": "토토로",
+      "description": "초록 숲속의 차분한 풍경",
+      "url": "https://motionbgs.com/dl/hd/135",
+      "sourcePage": "https://motionbgs.com/totoro-on-top-of-a-tree",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "calm",
+        "cute",
+        "2d"
+      ],
+      "artworkKey": "motionbgs:135"
+    },
+    {
+      "id": "motion-more-sanrio-space-wide-v50",
+      "title": "산리오 친구들 · 우주 · 펼친 화면",
+      "category": "산리오",
+      "description": "여러 친구가 함께 있는 배경",
+      "url": "https://motionbgs.com/dl/hd/3279",
+      "sourcePage": "https://motionbgs.com/sanrio-in-space",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:3279"
+    },
+    {
+      "id": "motion-more-snoopy-snow-night-wide-v50",
+      "title": "스누피와 찰리 · 눈 내리는 밤 · 펼친 화면",
+      "category": "스누피",
+      "description": "차분한 겨울밤 애니메이션",
+      "url": "https://motionbgs.com/dl/hd/8318",
+      "sourcePage": "https://motionbgs.com/charlie-snoopy-snow-night",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "dark",
+        "calm",
+        "2d"
+      ],
+      "artworkKey": "motionbgs:8318"
+    },
+    {
+      "id": "motion-more-corgi-sleeping-wide-v50",
+      "title": "웰시코기 · 낮잠 · 펼친 화면",
+      "category": "동물·힐링",
+      "description": "자고 있는 강아지 · 잔잔한 배경",
+      "url": "https://motionbgs.com/dl/hd/5685",
+      "sourcePage": "https://motionbgs.com/corgi-sleeping",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "animal",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:5685"
+    },
+    {
+      "id": "motion-more-healing-cat-cafe-wide-v50",
+      "title": "고양이 · 힐링 카페 · 펼친 화면",
+      "category": "동물·힐링",
+      "description": "따뜻한 분위기의 고양이 카페",
+      "url": "https://motionbgs.com/dl/hd/8036",
+      "sourcePage": "https://motionbgs.com/healing-cat-cafe",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "animal",
+        "calm",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:8036"
+    },
+    {
+      "id": "motion-more-cinnamoroll-clouds-wide-v50",
+      "title": "시나모롤 · 구름 사이 · 펼친 화면",
+      "category": "산리오",
+      "description": "부드럽고 차분한 구름 연출",
+      "url": "https://motionbgs.com/dl/hd/1733",
+      "sourcePage": "https://motionbgs.com/cinnamoroll-flying-in-clouds",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "calm",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1733"
+    },
+    {
+      "id": "motion-more-hello-kitty-cloud-wide-v50",
+      "title": "헬로키티 · 분홍 구름 · 펼친 화면",
+      "category": "산리오",
+      "description": "분홍빛 귀여운 구름",
+      "url": "https://motionbgs.com/dl/hd/1722",
+      "sourcePage": "https://motionbgs.com/pink-hello-kitty-on-cloud",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 공유 페이지 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "FHD (1920×1080)",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "calm",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:1722"
+    },
+    {
+      "id": "quality-pokemons-sleeping-wide-portrait-v50",
+      "title": "잠든 포켓몬 친구들 · 접힘 화면",
+      "category": "포켓몬",
+      "description": "잠든 포켓몬들의 잔잔한 장면",
+      "sourcePage": "https://motionbgs.com/mobile/pokemons-sleeping",
+      "url": "https://motionbgs.com/dl/mhd/2945",
+      "approxMB": 0,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 제작자 공개 원본 MP4 (개인 사용)",
+      "recommendedScenes": [
+        "NIGHT",
+        "LOW_BATTERY"
+      ],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "HD (720×1280)",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "motionbgs:2945"
     }
   ]
 }
