@@ -7,7 +7,6 @@ on:
     paths:
       - ".github/workflows/weekly-wallpaper-discovery.yml"
       - "scripts/refresh_catalog.py"
-      - "scripts/discover_nasa.py"
 permissions:
   contents: write
 concurrency:
@@ -30,10 +29,6 @@ jobs:
         run: python scripts/refresh_catalog.py --self-test
       - name: Discover compatible new original videos
         run: python scripts/refresh_catalog.py
-      - name: Install video metadata validator
-        run: sudo apt-get update -qq && sudo apt-get install -y -qq --no-install-recommends ffmpeg
-      - name: Discover NASA open media MP4s
-        run: python scripts/discover_nasa.py
       - name: Commit verified new links and metadata
         run: |
           set -euo pipefail

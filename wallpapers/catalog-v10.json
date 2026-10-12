@@ -3541,34 +3541,6 @@
         "character"
       ],
       "artworkKey": "motionbgs:2945"
-    },
-    {
-      "id": "nasa-auto-ca46f27c0cb921e6",
-      "title": "NASA · The Aurora Named STEVE",
-      "category": "우주·자연",
-      "description": "NASA 원본 영상 · 개인용 우주/자연 배경 · 133초 · 출처 확인 가능",
-      "url": "https://images-assets.nasa.gov/video/GSFC_20180314_Aurora_m12865_Steve/GSFC_20180314_Aurora_m12865_Steve~medium.mp4",
-      "sourcePage": "https://images.nasa.gov/details/GSFC_20180314_Aurora_m12865_Steve",
-      "approxMB": 37.27,
-      "mime": "video/mp4",
-      "width": 1280,
-      "height": 720,
-      "credit": "NASA Image and Video Library · 영상 원본 사이트",
-      "recommendedScenes": [
-        "NIGHT",
-        "NORMAL"
-      ],
-      "orientation": "가로",
-      "style": "원본 영상",
-      "quality": "MP4 · 1280×720 · 원본 크기/재생 길이 검사",
-      "recommendable": true,
-      "tasteTags": [
-        "background",
-        "calm",
-        "space"
-      ],
-      "artworkKey": "nasa:GSFC_20180314_Aurora_m12865_Steve",
-      "recommendationGroup": "우주·자연"
     }
   ]
 }
