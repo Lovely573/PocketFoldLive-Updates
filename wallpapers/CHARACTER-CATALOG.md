@@ -26,3 +26,10 @@ The app reads `wallpapers/catalog-v12.json` (129 publisher-linked variants).
 - At most 500 catalog entries; preserve `id`, `artworkKey`, `recommendedScenes`, `orientation`, `mime`, `sourcePage`, `credit`.
 - The catalog updater announces new verified entries without downloading every file. Broken publisher links should be fixed or removed.
 - The revoked automated crawler remains disabled; do not bypass source website restrictions.
+
+## Catalog v13: source-only Shin-chan videos
+
+- Added two independently published original source pages: [Shin-chan Flashlight Search](https://www.chicswipe.com/live-wallpaper/shin-chan-flashlight-search-live-wallpaper) and [Shin-chan Cherry Blossom Blowing Bubbles](https://www.chicswipe.com/live-wallpaper/shin-chan-cherry-blossom-blowing-bubbles-live-wallpaper). Their pages display a Download Video action.
+- These two are `recommendable: false` until their exact media URLs, downloaded MP4 bytes and portrait video dimensions have been checked. The in-app gallery exposes an original-page download button and the personal media picker. Do not represent these as ready-to-play auto-theme videos.
+- Built-in same-character fallback in build 64: when a scene has fewer than two matching artworks of the selected theme and screen orientation, users can enable other compatible artworks from that same theme. Each card identifies actual scene matches vs same-theme stand-ins. This does not increase the number of unique videos.
+- Earlier `catalog-v11.json` and `catalog-v12.json` are intentionally retained for older app builds.
