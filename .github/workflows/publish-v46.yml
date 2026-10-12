@@ -1,0 +1,29 @@
+name: Publish PocketFoldLive v46 APK
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-v46.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch signed v46 from source CI and verify exact binary SHA-256
+        env:
+          ARTIFACT_URL: 'https://sdmntprjapaneast.oaiusercontent.com/files/00000000-374c-8209-b192-1d67bc743459/raw?se=2026-10-12T00%3A55%3A36Z&sp=r&sv=2026-02-06&sr=b&scid=6a3ce01d-3cee-51f7-97eb-39be9c706c2c&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-11T23%3A26%3A05Z&ske=2026-10-12T23%3A26%3A05Z&sks=b&skv=2026-02-06&sig=EE1fHHNYC5ma/7VRnSRZyGIgSoIWsEntU0C4InJNkv8%3D'
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 "$ARTIFACT_URL" --output signed.zip
+          unzip -o signed.zip PocketFoldLive.apk
+          test -s PocketFoldLive.apk
+          echo '640b4f26952199d6b0a9b090e6ea81d324e5d01dd093e99be52f212025b65996  PocketFoldLive.apk' | sha256sum --check -
+      - name: Publish current v46 signed APK for in-app update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          set -euo pipefail
+          gh release create v46 PocketFoldLive.apk --repo "${{ github.repository }}" \
+            --title "PocketFoldLive v0.19.2 (46)" \
+            --notes "Fix app content overlapping Fold status bar, display cutouts and bottom system navigation / gesture bar. Use AndroidX window insets from the actual system across Main, Auto Preset, Individual Video Gallery and legacy Recommended Media screens; preserve keyboard clearance. Add an additional 4 dp side margin on both compact cover and unfolded screens without squeezing cover-screen controls. New auto-preset full-scenario overview includes a live looping mute MP4 preview of the currently selected scene, instead of requiring a separate detail view. Tap any scenario to play its video inline and use adjacent Change action for alternate 1/4 recommendations. Existing selections, automatic batch apply, 89 source-linked original video options and system cover/inner wallpaper settings are preserved. Signed source CI commit feb41fb66b7a49e684b33ada964b0bdcabc498e4; passed unit tests, build and private APK signing. Verified APK SHA-256 640b4f26952199d6b0a9b090e6ea81d324e5d01dd093e99be52f212025b65996. Real Fold8 UI and original source video playback require device verification." \
+            --latest
