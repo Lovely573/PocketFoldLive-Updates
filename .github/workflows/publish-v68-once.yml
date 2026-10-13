@@ -1,0 +1,43 @@
+name: Publish signed build 68 once
+on:
+  push:
+    paths: [".github/workflows/publish-v68-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve signed source CI artifact
+        env:
+          ARTIFACT_URL: "https://sdmntprkoreacentral.oaiusercontent.com/files/00000000-d4a0-8206-8e0a-c0c617c54f6a/raw?se=2026-10-13T00%3A37%3A16Z&sp=r&sv=2026-02-06&sr=b&scid=713fed8f-0ae3-5add-a8b8-41519040c6f0&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T23%3A43%3A03Z&ske=2026-10-13T23%3A43%3A03Z&sks=b&skv=2026-02-06&sig=JL9XIl3dwlO71HsEN28P2fvLNbqy46P9NbOwzeUo1lg%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "1fd6d96c2f083e1a56b1ed1686afbaef5fbffb6b70203db3f8237ba916ee45f4  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Publish APK for existing installs
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > NOTES.md <<'EOF'
+          ## PocketFoldLive v0.28.1 · Build 68
+
+          - Clarifies real charging/loading animations vs relaxing charging-time ambient clips. Do not confuse scene tags with true battery progress visualizations.
+          - Catalog v14 adds **two independent creator-published gentle animated artworks** with portrait and landscape original MP4 links:
+            - Paimon in a Hot Pot (pixel-art warm rest): MotionBGS original media /dl/mhd/1042 and /dl/hd/1042.
+            - Cozy Campfire by Abi Toads: MotionBGS original media /dl/mhd/8823 and /dl/hd/8823.
+          - Four media entries, two distinct artworks. Battery icon/gauge progress animation is **not** depicted in the new two artworks.
+          - Gallery prioritizes explicitly styled Pikachu Loading / Lucario Energy animations, deduplicates original artwork keys and displays charging-time recommended unique counts and page numbers. Relaxing choices are visibly labeled as atmosphere-based, not charging animations.
+          - New '애니·캐릭터' theme, without modifying existing arrangements. Circuit-board wallpapers are not added to recommendations.
+          - Preserves all prior scenes, wallpaper selections, user video imports, liked/disliked choices, v67 offline playback logs and duplicate-free batch assignment.
+          - Catalog v13 remains available for older builds; no third-party MP4 bytes are republished or embedded.
+          - Final main branch unit tests, release compilation and original signature verification passed.
+          - Fold8 playback requires device verification. Errors can be shared via Home > 재생 오류 기록 보기 · 공유.
+
+          Source commit: d7b3dcd0f4f9089dbf3d5d0ae8d6f0cbe1300236
+          APK SHA256: 1fd6d96c2f083e1a56b1ed1686afbaef5fbffb6b70203db3f8237ba916ee45f4
+          EOF
+          gh release create v68 PocketFoldLive.apk --title "PocketFoldLive v0.28.1 (68)" --notes-file NOTES.md --latest
