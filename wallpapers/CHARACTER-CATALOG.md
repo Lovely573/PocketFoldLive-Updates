@@ -45,3 +45,23 @@ The app reads `wallpapers/catalog-v12.json` (129 publisher-linked variants).
 - Catalogue page/download-button URLs and the site's published dimension labels were reviewed. Actual Android decode, content and source availability still require the app's post-download checks.
 - To support old app builds, this update intentionally keeps `schemaVersion: 14` and the same live URL. A new app build is **not** required to see newly published choices after refreshing the catalogue; offline devices may temporarily use their prior cached list.
 - For future app builds, thumbs-up/down per *exact media ID* avoids treating a portrait and landscape variant as the same choice. Distinct variants still share an artworkKey for grouping in automatic theme rotation.
+
+## Final character video expansion · catalog freeze (2026-10-13)
+
+**User decision:** stop additional video discovery after Shin-chan, Detective Conan, and Tom & Jerry search; prioritize improvements to UX, recommendations, performance, media preview, error handling and stability.
+
+- Shin-chan: 8 original MP4 attachments across MINUHOME publisher posts are already listed for app-resolved download, plus 2 Chicswipe original-page references requiring user-driven import. Search found other pages but not a **new, nonduplicate, freely accessible and approved direct MP4**; thus no unverifiable new automatic catalog IDs were created.
+- Detective Conan: 2 direct original sources remain in catalog (MotionBGS Detective Conan and DesktopHut Conan/Haibara). New search results primarily led back to the same files or separately distributed/paid wallpaper sets; no new confirmed direct free MP4 was added.
+- Tom & Jerry: original MotionBGS live wallpaper `tom-and-jerry` is a genuinely distinct artwork from the existing `tom-and-jerry-old-tv` item. Add both directly downloadable versions from original publisher links: **HD 1920×1080 MP4** at `/dl/hd/8321` and **Mobile HD 720×1280 MP4** at `/dl/mhd/8321`. Both use artworkKey `motionbgs:8321` so they count as **one unique artwork** across screen orientations.
+- Catalog total: **204 → 206 file variants** (one new artwork). Existing media IDs/URLs and votes/settings are never reset or modified.
+- No third-party media is copied to GitHub; direct media URLs are used only for user-requested preview/download. On-device byte, codec, resolution, rights and availability checks still matter.
+
+### Next, do not add more videos
+
+1. Verify private build 78 on Fold8 and retain the known-good build 76 live wallpaper decoder Surface/Canvas producer fix. Do **not** automatically publish a private APK until it works on the target device.
+2. Improve recommendations: likes/dislikes consistently filtered across all picker modes; distinct artwork first, native aspect first; clear direct vs manual source status; progress through candidate rotation with no surprising repeat.
+3. Improve navigation and UX: a simpler situation list (normal day/night, battery low/critical, charging start/in-progress/complete); folded/unfolded with stable status labels and one-current-video preview.
+4. Optimize catalog caching, load-once preview and error recovery: no thumbnail flicker or repeated download on scroll, preserve current selection if an origin goes offline, display download failure reasons without replacing wallpaper.
+5. Test fold/unfold and charge/discharge end-to-end before the next public update.
+
+This document records the scope stop. Future work should prioritize application functionality, not increasing the number of candidate videos.
