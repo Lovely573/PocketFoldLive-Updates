@@ -1,0 +1,41 @@
+name: Publish signed PocketFoldLive v73 once
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-v73-once.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'Lovely573/PocketFoldLive-Updates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Ensure release v73 does not already exist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v73 --repo Lovely573/PocketFoldLive-Updates >/dev/null 2>&1; then
+            echo "Refusing to republish existing v73"
+            exit 1
+          fi
+      - name: Retrieve and validate signed build 73
+        env:
+          SOURCE_ARCHIVE_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-3f50-820b-ad4b-34297aebb3ca/raw?se=2026-10-13T03%3A43%3A56Z&sp=r&sv=2026-02-06&sr=b&scid=e60c8f97-2b9c-5ba7-8dc6-95b6811179c9&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-13T01%3A46%3A45Z&ske=2026-10-14T01%3A46%3A45Z&sks=b&skv=2026-02-06&sig=cIHpN0dJm49QyxDClKkcyH0YBAkexh5VElsp0Whn0ro%3D"
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 2 --connect-timeout 15 --max-time 180 "$SOURCE_ARCHIVE_URL" -o artifact.zip
+          echo "0d5555d25f90745925e7e39cb2540d5d9a8b21d298e13e410c76b9d655765bdb  artifact.zip" | sha256sum -c -
+          unzip -p artifact.zip PocketFoldLive-B73-test.apk > PocketFoldLive.apk
+          echo "8c6661cbd01cae9e9d6ffc0c14d012c053e9b9ee56691272bef29551ac4693be  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c '%s' PocketFoldLive.apk)" -eq 14713307
+      - name: Publish official app-updater v73 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v73 PocketFoldLive.apk \
+            --repo Lovely573/PocketFoldLive-Updates \
+            --title "PocketFoldLive v0.30.2 (build 73)" \
+            --notes "Fold8 접힘→펼침 시 영상 디코더 초기화 실패를 줄이기 위한 수정입니다. 보이지 않는 배경화면 엔진은 디코더 자원을 즉시 해제하고, 화면 크기가 700ms 안정된 후에만 영상 플레이어를 생성합니다. Surface 크기가 바뀌면 이전 플레이어를 정리하고, 다시 화면에 나타나면 해당 영상을 재생합니다. MediaPlayer/ExoPlayer의 해제 실패 방어와 진단 로그도 보강했습니다. 기존 영상·설정·추천 기록은 유지됩니다. 실기기에서의 완전한 해결 여부는 업데이트 후 추가 확인이 필요합니다." \
+            --latest
