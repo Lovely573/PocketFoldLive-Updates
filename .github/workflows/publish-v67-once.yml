@@ -1,0 +1,44 @@
+name: Publish signed build 67 once
+on:
+  push:
+    paths: [".github/workflows/publish-v67-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch signed official main build
+        env:
+          ARTIFACT_URL: "https://sdmntprjapaneast.oaiusercontent.com/files/00000000-26a4-8209-8814-82d572f30846/raw?se=2026-10-13T00%3A09%3A26Z&sp=r&sv=2026-02-06&sr=b&scid=4300aa06-7438-5ca4-9e02-6314a4efa1d1&skoid=bb372dd6-3b2a-4af2-b355-c26497ba23cd&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-12T23%3A57%3A12Z&ske=2026-10-13T23%3A57%3A12Z&sks=b&skv=2026-02-06&sig=XDruMTovWxnw7gWQcRXCrWlsZUutvDReKXTDpLv0n/o%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "9a6675e55881851f3bad89f14d5c2c9bd8a4ece060bf438daab7cf5cac95d41b  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Publish version 67 public APK update
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > RELEASE_NOTES.md <<'EOF'
+          ## PocketFoldLive v0.28.0 · Build 67
+
+          ### Diagnose intermittent wallpaper replay failures without USB
+          - An offline, recent-180-events log shows the real wallpaper engine's setup and Surface create/resize/destroy/rebind sequence, playback initialization, first decoded frame, decoder error codes, video progress stall and automatic retry timing.
+          - No raw media paths, filenames or download URLs are stored. Clip identities use an app-local opaque salted hash. Nothing is automatically sent online.
+          - From Home > '재생 오류 기록 보기 · 공유', review the recent events, copy or share a text diagnosis, or clear just the logs.
+          - This build gathers evidence to identify the actual Fold8 intermittent playback failure. It does not claim to have proven or repaired its root cause yet.
+
+          ### Never repeat artwork across automatic scene settings
+          - Optimizes all cover, unfolded and landscape scene recommendations together (23 slots) using unique original artwork identifiers, including portrait and landscape variants and duplicate catalog records.
+          - Prioritizes scene-specific clips first, uses correctly oriented but other-scene videos only as last-resort supplements, and preserves manual preferences where possible.
+          - If a chosen character theme lacks enough unique artwork, leaves unfilled slots unchanged instead of assigning duplicates or silently adding a different character.
+          - Only a new recommendation/apply run changes scene allocations. Existing saved media and other settings remain unchanged until the user applies them.
+
+          - Android unit tests, release build and cryptographic app-signature checks passed for source commit b5f343ea612831ecf123bf73b893f32e5e8617fc.
+          - No third-party wallpaper MP4 is bundled/rehosted.
+          APK SHA256: 9a6675e55881851f3bad89f14d5c2c9bd8a4ece060bf438daab7cf5cac95d41b
+          EOF
+          gh release create v67 PocketFoldLive.apk --title "PocketFoldLive v0.28.0 (67)" --notes-file RELEASE_NOTES.md --latest
