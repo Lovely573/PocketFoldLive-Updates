@@ -1,7 +1,7 @@
 {
   "schemaVersion": 14,
-  "updatedAt": "2026-10-13T05:22:00Z",
-  "description": "Catalog v14 extended: 157 entries, 22 additional directly downloadable publisher MP4 variants from 17 new character/relaxation works. Existing records/IDs intact. Personal user-initiated download only; media bytes are never mirrored. Fan attachment/publisher-page-only sources remain secondary fallback.",
+  "updatedAt": "2026-10-13T05:55:00Z",
+  "description": "Live catalog v14 (183 entries): +26 source-confirmed mobile 720×1280 MP4 videos. Dark/restful mood and bright/charging-mood supplements are honestly labelled, not actual battery percentage animations. 20 distinct publisher originals per scene when natural-aspect cross-screen selection is enabled; user dislikes and theme filters may reduce visible candidates. All existing item IDs remain intact; MP4 bytes remain on original publisher.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -4504,6 +4504,773 @@
       ],
       "artworkKey": "curated-20261013-abi-toads-lilypad-ride",
       "recommendationGroup": "동물·힐링"
+    },
+    {
+      "id": "scene20-moonlit-solitude-portrait",
+      "title": "달빛 아래 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "달빛 아래 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7874",
+      "sourcePage": "https://motionbgs.com/mobile/moonlit-solitude",
+      "approxMB": 1.9,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-moonlit-solitude",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-waiting-with-stars-portrait",
+      "title": "별빛을 기다리는 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "별빛을 기다리는 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7970",
+      "sourcePage": "https://motionbgs.com/mobile/waiting-with-stars",
+      "approxMB": 1.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-waiting-with-stars",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-forest-starry-night-portrait",
+      "title": "별빛 숲의 밤 · 세로 원본",
+      "category": "자연·배경",
+      "description": "별빛 숲의 밤 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/5680",
+      "sourcePage": "https://motionbgs.com/mobile/forest-starry-night",
+      "approxMB": 0.8,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-forest-starry-night",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-cat-in-rain-portrait",
+      "title": "비 오는 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "비 오는 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/4390",
+      "sourcePage": "https://motionbgs.com/mobile/cat-in-rain",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-cat-in-rain",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-cat-cloud-portrait",
+      "title": "하늘에서 길을 잃은 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "하늘에서 길을 잃은 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7028",
+      "sourcePage": "https://motionbgs.com/mobile/cat-cloud",
+      "approxMB": 5.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-cat-cloud",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-sunset-cat-portrait",
+      "title": "석양을 바라보는 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "석양을 바라보는 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7231",
+      "sourcePage": "https://motionbgs.com/mobile/sunset-cat",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-sunset-cat",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-stars-at-night-portrait",
+      "title": "밤하늘 별빛 · 세로 원본",
+      "category": "자연·배경",
+      "description": "밤하늘 별빛 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/5059",
+      "sourcePage": "https://motionbgs.com/mobile/stars-at-night",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-stars-at-night",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-sleeping-goku-portrait",
+      "title": "잠자는 손오공 · 세로 원본",
+      "category": "드래곤볼",
+      "description": "잠자는 손오공 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/5732",
+      "sourcePage": "https://motionbgs.com/mobile/sleeping-goku",
+      "approxMB": 2.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-sleeping-goku",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-starry-sky-and-tree-portrait",
+      "title": "별빛 나무 · 세로 원본",
+      "category": "자연·배경",
+      "description": "별빛 나무 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/1941",
+      "sourcePage": "https://motionbgs.com/mobile/starry-sky-and-tree",
+      "approxMB": 3.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-starry-sky-and-tree",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-forest-sunset-portrait",
+      "title": "숲속 노을 · 세로 원본",
+      "category": "자연·배경",
+      "description": "숲속 노을 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/4295",
+      "sourcePage": "https://motionbgs.com/mobile/forest-sunset",
+      "approxMB": 1.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-forest-sunset",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-sunset-over-silent-horizon-portrait",
+      "title": "고요한 노을 · 세로 원본",
+      "category": "자연·배경",
+      "description": "고요한 노을 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7629",
+      "sourcePage": "https://motionbgs.com/mobile/sunset-over-silent-horizon",
+      "approxMB": 1.1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-sunset-over-silent-horizon",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-moon-cat-portrait",
+      "title": "초승달과 고양이 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "초승달과 고양이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/8885",
+      "sourcePage": "https://motionbgs.com/mobile/moon-cat",
+      "approxMB": 1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-moon-cat",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-end-of-daylight-portrait",
+      "title": "해질녘의 고양이들 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "해질녘의 고양이들 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 잔잔한 배터리·야간 보완(배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/8243",
+      "sourcePage": "https://motionbgs.com/mobile/end-of-daylight",
+      "approxMB": 1.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "LOW_BATTERY",
+        "CRITICAL_BATTERY",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "calm",
+        "night",
+        "dark"
+      ],
+      "artworkKey": "scene20-end-of-daylight",
+      "chargingStyle": ""
+    },
+    {
+      "id": "scene20-sky-at-sunrise-portrait",
+      "title": "새벽 하늘 첫빛 · 세로 원본",
+      "category": "자연·배경",
+      "description": "새벽 하늘 첫빛 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/4184",
+      "sourcePage": "https://motionbgs.com/mobile/sky-at-sunrise",
+      "approxMB": 0.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-sky-at-sunrise",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-colorful-neon-stars-portrait",
+      "title": "알록달록 빛나는 별 · 세로 원본",
+      "category": "자연·배경",
+      "description": "알록달록 빛나는 별 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/10061",
+      "sourcePage": "https://motionbgs.com/mobile/colorful-neon-stars",
+      "approxMB": 3.2,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-colorful-neon-stars",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-cute-city-portrait",
+      "title": "아기자기한 도시 · 세로 원본",
+      "category": "애니·캐릭터",
+      "description": "아기자기한 도시 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/4626",
+      "sourcePage": "https://motionbgs.com/mobile/cute-city",
+      "approxMB": 0.7,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-cute-city",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-rengoku-smiling-with-a-bright-sunrise-portrait",
+      "title": "웃는 렌고쿠와 해돋이 · 세로 원본",
+      "category": "귀멸의 칼날",
+      "description": "웃는 렌고쿠와 해돋이 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/1347",
+      "sourcePage": "https://motionbgs.com/mobile/rengoku-smiling-with-a-bright-sunrise",
+      "approxMB": 1.2,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-rengoku-smiling-with-a-bright-sunrise",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-abi-toads-star-ride-portrait",
+      "title": "개구리 친구들 별빛 여행 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "개구리 친구들 별빛 여행 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/8928",
+      "sourcePage": "https://motionbgs.com/mobile/abi-toads-star-ride",
+      "approxMB": 0.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-abi-toads-star-ride",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-abi-toads-terrarium-portrait",
+      "title": "개구리 테라리움 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "개구리 테라리움 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/9581",
+      "sourcePage": "https://motionbgs.com/mobile/abi-toads-terrarium",
+      "approxMB": 0.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-abi-toads-terrarium",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-cosmos-flowers-blooming-portrait",
+      "title": "피어나는 코스모스 · 세로 원본",
+      "category": "자연·배경",
+      "description": "피어나는 코스모스 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/9392",
+      "sourcePage": "https://motionbgs.com/mobile/cosmos-flowers-blooming",
+      "approxMB": 2.2,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-cosmos-flowers-blooming",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-cherry-blossoms-branches-portrait",
+      "title": "벚꽃 가지와 봄바람 · 세로 원본",
+      "category": "자연·배경",
+      "description": "벚꽃 가지와 봄바람 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/7897",
+      "sourcePage": "https://motionbgs.com/mobile/cherry-blossoms-branches",
+      "approxMB": 0.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-cherry-blossoms-branches",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-cute-snowman-portrait",
+      "title": "귀여운 눈사람 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "귀여운 눈사람 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/8935",
+      "sourcePage": "https://motionbgs.com/mobile/cute-snowman",
+      "approxMB": 2.1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-cute-snowman",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-cute-klee-portrait",
+      "title": "귀여운 클레 · 세로 원본",
+      "category": "원신",
+      "description": "귀여운 클레 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/3815",
+      "sourcePage": "https://motionbgs.com/mobile/cute-klee",
+      "approxMB": 3.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-cute-klee",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-animal-characters-portrait",
+      "title": "아기자기한 동물 친구들 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "아기자기한 동물 친구들 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/8534",
+      "sourcePage": "https://motionbgs.com/mobile/animal-characters",
+      "approxMB": 1,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-animal-characters",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-corgi-adventure-portrait",
+      "title": "코기의 작은 모험 · 세로 원본",
+      "category": "동물·힐링",
+      "description": "코기의 작은 모험 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/5696",
+      "sourcePage": "https://motionbgs.com/mobile/corgi-adventure",
+      "approxMB": 8.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-corgi-adventure",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "scene20-pink-cosmos-flower-portrait",
+      "title": "분홍 코스모스 · 세로 원본",
+      "category": "자연·배경",
+      "description": "분홍 코스모스 장면 · 제공처 MP4를 앱에서 다운로드하고 미리보기 · 충전 분위기 보완(실제 배터리 표시 없음)",
+      "url": "https://motionbgs.com/dl/mhd/9473",
+      "sourcePage": "https://motionbgs.com/mobile/pink-cosmos-flower",
+      "approxMB": 2.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 공개 다운로드",
+      "recommendedScenes": [
+        "CHARGING_START",
+        "CHARGING",
+        "FULL_BATTERY",
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "잔잔한 캐릭터/자연 애니메이션",
+      "quality": "제공처 모바일 720×1280 원본, 다운로드 후 코덱 및 크기 재검사",
+      "recommendable": true,
+      "tasteTags": [
+        "cute",
+        "calm",
+        "bright"
+      ],
+      "artworkKey": "scene20-pink-cosmos-flower",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
     }
   ]
 }
