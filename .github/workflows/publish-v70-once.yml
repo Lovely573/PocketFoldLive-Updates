@@ -1,0 +1,48 @@
+name: Publish signed build 70 once
+on:
+  push:
+    paths: [".github/workflows/publish-v70-once.yml"]
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Retrieve tested signed main APK
+        env:
+          ARTIFACT_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-cbe4-820b-a1f8-9a05abfd0254/raw?se=2026-10-13T01%3A21%3A56Z&sp=r&sv=2026-02-06&sr=b&scid=9062aef2-09fc-5622-af79-d6109bd4b018&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-13T01%3A16%3A55Z&ske=2026-10-14T01%3A16%3A55Z&sks=b&skv=2026-02-06&sig=etW5ybjsyPFqhskbjBwVMKmWpqK3/1EN53Umba3NCsA%3D"
+        run: |
+          set -euo pipefail
+          curl --fail --location --retry 3 --silent --show-error "$ARTIFACT_URL" -o signed.zip
+          unzip -p signed.zip PocketFoldLive.apk > PocketFoldLive.apk
+          echo "dd98829410db59bb29e3a9356265ee839c85398840e378bab78297c2f7c163c5  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c%s PocketFoldLive.apk)" -gt 10000000
+      - name: Publish public signed APK release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: Lovely573/PocketFoldLive-Updates
+        run: |
+          cat > NOTES.md <<'EOF'
+          ## PocketFoldLive v0.29.0 · Build 70
+
+          ### Live preview of saved scene wallpapers
+          - From Home > 현재 설정된 내 영상 / 상황별 영상 관리, review **all 23 cover, unfolded and landscape scene assignments** in the same multi-card live preview layout used by automatic recommendations.
+          - Large in-card thumbnails from actual stored local videos, with at most **two visible silent videos** playing simultaneously (plus one warm paused decoder). TextureView avoids SurfaceView scroll black flashes.
+          - Turn moving preview on/off; browse ALL, cover, unfolded or landscape independently.
+          - Per-card labels distinguish direct media assignments, fallback inherited assignments, missing files and truly unassigned scenes.
+          - Keep per-card fullscreen preview, video edit and copy-to-other-scene actions, history restore and storage cleanup unchanged. Off-screen media stays paused and player resources are released when Activity stops.
+          - Prevent asynchronous thumbnail extraction from obscuring an already playing video frame.
+
+          ### Show all relevant videos during individual scene selection
+          - The previous individual gallery incorrectly defaulted to strictly matching the scene tag. Thus a scene could show one video even though dozens of correct-orientation originals existed.
+          - The per-scene picker now defaults to **all aspect-compatible videos**, ranks scene-specific videos first, and labels exact-scene vs other-scene choices.
+          - Strict scene filtering remains available by explicit opt-in. A one-tap reset clears category, search text and strict filter while keeping the screen orientation.
+          - Regression tests cover a wide-screen slot with one scene-tagged video and multiple usable wide originals; all must appear by default.
+
+          Existing downloaded videos, scene allocations, catalog v14, personalization, likes/dislikes and error diagnosis logs are preserved.
+          This build does not claim that Samsung's live wallpaper Surface rendering bugs are fixed. Inline preview behavior on Fold8 needs on-device validation.
+          Source main commit: e73955ca99738edafe10d7ea6bbe0aa09486dc0d
+          CI main run 38331028839: tests, release compilation and original signature verification passed.
+          APK SHA256: dd98829410db59bb29e3a9356265ee839c85398840e378bab78297c2f7c163c5
+          EOF
+          gh release create v70 PocketFoldLive.apk --title "PocketFoldLive v0.29.0 (70)" --notes-file NOTES.md --latest
