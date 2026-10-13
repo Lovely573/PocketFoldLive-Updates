@@ -1,0 +1,50 @@
+name: Verify 20-Choice Scene Catalog
+on:
+  push:
+    paths:
+      - wallpapers/catalog-v14.json
+      - .github/workflows/verify-20-choice-catalog.yml
+  pull_request:
+    paths:
+      - wallpapers/catalog-v14.json
+      - .github/workflows/verify-20-choice-catalog.yml
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate source links, unique IDs, and 20 distinct artworks per scene
+        run: |
+          python3 - <<'PY'
+          import json,re,collections
+          from pathlib import Path
+          data=json.loads(Path('wallpapers/catalog-v14.json').read_text(encoding='utf-8'))
+          items=data['items']
+          assert data['schemaVersion']==14
+          assert len(items)<=500
+          ids=[x['id'] for x in items]
+          assert len(ids)==len(set(ids)), 'Duplicate media ID'
+          target=['NORMAL','NIGHT','LOW_BATTERY','CRITICAL_BATTERY','CHARGING_START','CHARGING','FULL_BATTERY']
+          new=[x for x in items if x['id'].startswith('scene20-')]
+          assert len(new)>=26, 'Confirmed portrait expansion missing'
+          urls=[x['url'] for x in new]
+          assert len(urls)==len(set(urls)), 'Duplicate new MP4 download links'
+          for x in new:
+              assert x['orientation']=='세로'
+              assert (x['width'],x['height'])==(720,1280)
+              assert x['mime']=='video/mp4' and x['recommendable']
+              assert re.fullmatch(r'https://motionbgs[.]com/dl/mhd/[0-9]+',x['url'])
+              assert re.fullmatch(r'https://motionbgs[.]com/mobile/[a-z0-9-]+',x['sourcePage'])
+              assert x['recommendedScenes']
+              assert x['artworkKey']
+          for scene in target:
+              eligible=[x for x in items if x.get('recommendable') and x.get('url') and
+                        scene in x.get('recommendedScenes',[]) and x.get('orientation') in ('세로','가로')]
+              distinct=len({x.get('artworkKey') or x['id'] for x in eligible})
+              print(f'{scene}: {distinct} distinct sourced works')
+              assert distinct>=20, f'{scene}: only {distinct} unique works'
+          print('PASS: source metadata and cross-display 20-work catalog coverage')
+          PY
