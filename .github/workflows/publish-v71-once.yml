@@ -1,0 +1,43 @@
+name: Publish signed PocketFoldLive v71
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-v71-once.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    if: github.repository == 'Lovely573/PocketFoldLive-Updates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Confirm release is not yet published
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v71 --repo Lovely573/PocketFoldLive-Updates >/dev/null 2>&1; then
+            echo "Release v71 already exists; refusing duplicate publication"
+            exit 1
+          fi
+      - name: Retrieve and verify the signed build 71 artifact
+        env:
+          SOURCE_ARCHIVE_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-00cc-820b-8660-62035623fcb4/raw?se=2026-10-13T02%3A36%3A38Z&sp=r&sv=2026-02-06&sr=b&scid=5a57c4c0-6ed1-5d55-a830-c9e401a216e5&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-13T01%3A00%3A43Z&ske=2026-10-14T01%3A00%3A43Z&sks=b&skv=2026-02-06&sig=Q%2BGjUF2N0VR4Ns5Bz%2BE2cHemRhRlDRGokPwa7E4zv7k%3D"
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 2 --connect-timeout 15 --max-time 180 "$SOURCE_ARCHIVE_URL" -o artifact.zip
+          echo "b9b1d80fad4a2a0ebcabf0994d96351917cb38f885cac992ea1444b65a389735  artifact.zip" | sha256sum -c -
+          unzip -p artifact.zip PocketFoldLive-B71-test.apk > PocketFoldLive.apk
+          echo "76c92ecfd38e069e71b86af2910bd8e84768917842ed241bef3f523a89e16233  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c '%s' PocketFoldLive.apk)" -eq 14701019
+      - name: Create the official public app-updater release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v71 PocketFoldLive.apk \
+            --repo Lovely573/PocketFoldLive-Updates \
+            --title "PocketFoldLive v0.30.0-beta.1 (build 71)" \
+            --notes "접힘·펼침 2개 화면 중심의 배경화면 설정 및 영상 미리보기, 야간·배터리·충전 상황별 선택 관리, 활성화된 상황만 전체 자동 추천, 실제 완충 및 충전 연결 감지. 기존 영상·취향·설정 보존을 목표로 한 1·2단계 통합 업데이트입니다. Galaxy Z Fold8 실기기 테스트 전이므로 재생 문제 발생 시 앱의 재생 진단 기록을 확인해 주세요." \
+            --latest
