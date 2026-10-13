@@ -27,3 +27,13 @@ Charging complete | 26 | 13 | 26
 1. Discover independent 9:16 and 16:9 MP4 publisher download buttons with in-app preview support.
 2. Diversify by art, situation, theme and original motion rather than aliasing a source.
 3. Only after direct sources are exhausted, list publisher attachment posts or manual-download/import sources separately.
+
+
+## 2026-10-13 next stage · Pokémon character-video expansion
+
+- Added **17 distinct Pokémon artworks** with **21 publisher-hosted direct MP4 links** to the same catalog v14: 17 landscape 1920×1080 videos and 4 verified mobile 720×1280 videos. Total catalog increases **183 → 204** entries.
+- New characters and motifs: Charizard (pixel and fire), Charmander, Squirtle, Gengar Phantom Grin, sleepy Pikachu, Mimikyu, Leafeon in Galaxy, shiny Espeon, Sylveon, Cubone & Gengar, pixel Bulbasaur, Pokéball in Rain, Greninja, Zapdos, Umbreon in Space, Pokémon Diamond & Pearl. One distinct `artworkKey` per original scene, shared between landscape and portrait editions.
+- Exact original MotionBGS HD/mobile download-button URLs and the source pages were inspected before catalog inclusion. The app must still check downloaded bytes, codec and source-video geometry before applying.
+- No new original publisher-download video was confirmed for Shin-chan or Detective Conan during this stage. Their existing videos and original-page source-only options remain unchanged. Do **not** classify static Shin-chan artwork as an MP4 or duplicate the existing Conan/Haibara source under a second ID.
+- Public live-catalog publication is separate from APK build 78. It does not change the Android player Surface engine, which must retain its verified build-76 producer fix. The newest app build still requires device validation before a general release.
+- For sources where only desktop 1920×1080 MP4 was independently confirmed, **do not invent a portrait variant**. The app may reuse a wide video on the cover only via aspect-preserving full-FIT/limited crop.
