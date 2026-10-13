@@ -1,0 +1,41 @@
+name: Publish signed PocketFoldLive v74 once
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-v74-once.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'Lovely573/PocketFoldLive-Updates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Ensure release v74 does not already exist
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v74 --repo Lovely573/PocketFoldLive-Updates >/dev/null 2>&1; then
+            echo "Refusing to republish existing v74"
+            exit 1
+          fi
+      - name: Retrieve and validate signed build 74
+        env:
+          SOURCE_ARCHIVE_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-6030-820b-b216-270b62b48062/raw?se=2026-10-13T04%3A17%3A27Z&sp=r&sv=2026-02-06&sr=b&scid=9c7bb355-56da-59d8-9438-9b3cdf305954&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-13T02%3A27%3A40Z&ske=2026-10-14T02%3A27%3A40Z&sks=b&skv=2026-02-06&sig=0mI7KEWEStRqTVs6P7rhYS1F3tEfI74iUhduMSkfbIw%3D"
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 2 --connect-timeout 15 --max-time 180 "$SOURCE_ARCHIVE_URL" -o artifact.zip
+          echo "dacdfe954945b44266e6377ca695c33410cb8d16d8972fc17090780accb378d8  artifact.zip" | sha256sum -c -
+          unzip -p artifact.zip PocketFoldLive-B74-test.apk > PocketFoldLive.apk
+          echo "a232a759e011bc84e9ce1ac6561951d77b428d772dc94c65e07f583e8abe368e  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c '%s' PocketFoldLive.apk)" -eq 14713307
+      - name: Publish official app-updater v74 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v74 PocketFoldLive.apk \
+            --repo Lovely573/PocketFoldLive-Updates \
+            --title "PocketFoldLive v0.30.3 (build 74) · 긴급 재생 복구" \
+            --notes "빌드 73에서 접힘·펼침 화면 모두 검게 나오는 회귀 문제 때문에 배경화면 재생 엔진을 이전 빌드 72 상태로 정확히 복원했습니다. 데이터/영상 파일/설정/추천 기록은 유지되며 이전 앱 위에 업데이트할 수 있습니다. 참고: 빌드 72 엔진에도 간헐적인 디코더 초기화 오류는 있었으므로 근본 원인이 완전히 해결된 것은 아닙니다. 영상이 나오지 않을 경우 새 진단 로그를 확인해 주세요." \
+            --latest
