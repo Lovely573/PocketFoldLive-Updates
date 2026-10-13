@@ -1,7 +1,7 @@
 {
   "schemaVersion": 14,
-  "updatedAt": "2026-10-13T00:00:00Z",
-  "description": "Catalog v14 (135 entries): retains v13 and all IDs, adds 2 distinct character restful loops in portrait and landscape from publisher MP4 links, labels actual loading/energy motifs separately from ambiance recommendations. User-initiated personal downloads only; do not host third-party video bytes. No circuits recommended.",
+  "updatedAt": "2026-10-13T05:22:00Z",
+  "description": "Catalog v14 extended: 157 entries, 22 additional directly downloadable publisher MP4 variants from 17 new character/relaxation works. Existing records/IDs intact. Personal user-initiated download only; media bytes are never mirrored. Fan attachment/publisher-page-only sources remain secondary fallback.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -3881,6 +3881,629 @@
       ],
       "artworkKey": "motionbgs:8823",
       "chargingStyle": "휴식·힐링형"
+    },
+    {
+      "id": "curated-stitch-under-the-stars-wide",
+      "title": "스티치 · 별빛 아래 · 펼침용",
+      "category": "스티치",
+      "description": "별빛 아래의 스티치 · 잔잔한 야간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/7918",
+      "sourcePage": "https://motionbgs.com/stitch-under-the-stars",
+      "approxMB": 1.7,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "calm",
+        "night"
+      ],
+      "artworkKey": "curated-20261013-stitch-under-the-stars",
+      "recommendationGroup": "스티치"
+    },
+    {
+      "id": "curated-stitch-under-the-stars-portrait",
+      "title": "스티치 · 별빛 아래 · 접힘용",
+      "category": "스티치",
+      "description": "별빛 아래의 스티치 · 잔잔한 야간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/7918",
+      "sourcePage": "https://motionbgs.com/mobile/stitch-under-the-stars",
+      "approxMB": 0.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "calm",
+        "night"
+      ],
+      "artworkKey": "curated-20261013-stitch-under-the-stars",
+      "recommendationGroup": "스티치"
+    },
+    {
+      "id": "curated-sleeping-kirby-wide",
+      "title": "커비 · 포근한 잠 · 펼침용",
+      "category": "커비",
+      "description": "잠자는 커비 · 휴식과 야간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/3153",
+      "sourcePage": "https://motionbgs.com/sleeping-kirby",
+      "approxMB": 1.3,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "calm",
+        "night"
+      ],
+      "artworkKey": "curated-20261013-sleeping-kirby",
+      "recommendationGroup": "커비"
+    },
+    {
+      "id": "curated-sobble-pokemon-wide",
+      "title": "울머기 · 포켓몬 · 펼침용",
+      "category": "포켓몬",
+      "description": "울머기 캐릭터 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/1993",
+      "sourcePage": "https://motionbgs.com/sobble-pokemon",
+      "approxMB": 6.7,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "LOW_BATTERY"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "cute",
+        "character"
+      ],
+      "artworkKey": "curated-20261013-sobble-pokemon",
+      "recommendationGroup": "포켓몬"
+    },
+    {
+      "id": "curated-totoro-sleeping-wide",
+      "title": "토토로 · 잠자는 숲 · 펼침용",
+      "category": "토토로",
+      "description": "잠자는 토토로 · 차분한 분위기 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/2401",
+      "sourcePage": "https://motionbgs.com/totoro-sleeping",
+      "approxMB": 29.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "calm",
+        "night",
+        "ghibli"
+      ],
+      "artworkKey": "curated-20261013-totoro-sleeping",
+      "recommendationGroup": "토토로"
+    },
+    {
+      "id": "curated-umbreon-under-the-moonlight-wide",
+      "title": "블래키 · 달빛 아래 · 펼침용",
+      "category": "포켓몬",
+      "description": "달빛 속 블래키 · 야간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/2946",
+      "sourcePage": "https://motionbgs.com/umbreon-under-the-moonlight",
+      "approxMB": 9.8,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "dark",
+        "calm",
+        "character"
+      ],
+      "artworkKey": "curated-20261013-umbreon-under-the-moonlight",
+      "recommendationGroup": "포켓몬"
+    },
+    {
+      "id": "curated-stitch-wide",
+      "title": "스티치 · 파란 배경 · 펼침용",
+      "category": "스티치",
+      "description": "파란색 스티치 캐릭터 · 평상시 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/7901",
+      "sourcePage": "https://motionbgs.com/stitch",
+      "approxMB": 10.2,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "blue"
+      ],
+      "artworkKey": "curated-20261013-stitch",
+      "recommendationGroup": "스티치"
+    },
+    {
+      "id": "curated-stitch-portrait",
+      "title": "스티치 · 파란 배경 · 접힘용",
+      "category": "스티치",
+      "description": "파란색 스티치 캐릭터 · 평상시 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/7901",
+      "sourcePage": "https://motionbgs.com/mobile/stitch",
+      "approxMB": 4.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "blue"
+      ],
+      "artworkKey": "curated-20261013-stitch",
+      "recommendationGroup": "스티치"
+    },
+    {
+      "id": "curated-sad-snoopy-wide",
+      "title": "스누피 · 조용한 시간 · 펼침용",
+      "category": "스누피",
+      "description": "스누피의 조용한 순간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/8291",
+      "sourcePage": "https://motionbgs.com/sad-snoopy",
+      "approxMB": 0.7,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL",
+        "LOW_BATTERY"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "calm",
+        "cute"
+      ],
+      "artworkKey": "curated-20261013-sad-snoopy",
+      "recommendationGroup": "스누피"
+    },
+    {
+      "id": "curated-sad-snoopy-portrait",
+      "title": "스누피 · 조용한 시간 · 접힘용",
+      "category": "스누피",
+      "description": "스누피의 조용한 순간 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/8291",
+      "sourcePage": "https://motionbgs.com/mobile/sad-snoopy",
+      "approxMB": 0.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NIGHT",
+        "NORMAL",
+        "LOW_BATTERY"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "calm",
+        "cute"
+      ],
+      "artworkKey": "curated-20261013-sad-snoopy",
+      "recommendationGroup": "스누피"
+    },
+    {
+      "id": "curated-kirby-wide",
+      "title": "커비 · 캐릭터 · 펼침용",
+      "category": "커비",
+      "description": "커비 캐릭터 연출 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/8141",
+      "sourcePage": "https://motionbgs.com/kirby",
+      "approxMB": 11.9,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "game"
+      ],
+      "artworkKey": "curated-20261013-kirby",
+      "recommendationGroup": "커비"
+    },
+    {
+      "id": "curated-rainy-day-with-pikachu-wide",
+      "title": "피카츄 · 비 오는 하루 · 펼침용",
+      "category": "포켓몬",
+      "description": "비 오는 날의 피카츄 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/7340",
+      "sourcePage": "https://motionbgs.com/rainy-day-with-pikachu",
+      "approxMB": 5.5,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "cute",
+        "calm",
+        "rain"
+      ],
+      "artworkKey": "curated-20261013-rainy-day-with-pikachu",
+      "recommendationGroup": "포켓몬"
+    },
+    {
+      "id": "curated-rainy-day-with-pikachu-portrait",
+      "title": "피카츄 · 비 오는 하루 · 접힘용",
+      "category": "포켓몬",
+      "description": "비 오는 날의 피카츄 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/7340",
+      "sourcePage": "https://motionbgs.com/mobile/rainy-day-with-pikachu",
+      "approxMB": 2.6,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "pokemon",
+        "cute",
+        "calm",
+        "rain"
+      ],
+      "artworkKey": "curated-20261013-rainy-day-with-pikachu",
+      "recommendationGroup": "포켓몬"
+    },
+    {
+      "id": "curated-we-bare-bears-wide",
+      "title": "위 베어 베어스 · 숲속 산책 · 펼침용",
+      "category": "위 베어 베어스",
+      "description": "곰돌이 친구들 · 숲속 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/10122",
+      "sourcePage": "https://motionbgs.com/we-bare-bears",
+      "approxMB": 12,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "calm"
+      ],
+      "artworkKey": "curated-20261013-we-bare-bears",
+      "recommendationGroup": "위 베어 베어스"
+    },
+    {
+      "id": "curated-tom-nook-animal-crossing-wide",
+      "title": "너굴 · 동물의 숲 · 펼침용",
+      "category": "동물의 숲",
+      "description": "동물의 숲 · 너굴 캐릭터 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/3224",
+      "sourcePage": "https://motionbgs.com/tom-nook-animal-crossing",
+      "approxMB": 20,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "game",
+        "calm",
+        "cute"
+      ],
+      "artworkKey": "curated-20261013-tom-nook-animal-crossing",
+      "recommendationGroup": "동물의 숲"
+    },
+    {
+      "id": "curated-jake-the-dog-wide",
+      "title": "제이크 · 어드벤처 타임 · 펼침용",
+      "category": "어드벤처 타임",
+      "description": "어드벤처 타임의 제이크 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/2996",
+      "sourcePage": "https://motionbgs.com/jake-the-dog",
+      "approxMB": 52.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "cartoon"
+      ],
+      "artworkKey": "curated-20261013-jake-the-dog",
+      "recommendationGroup": "어드벤처 타임"
+    },
+    {
+      "id": "curated-jake-the-dog-portrait",
+      "title": "제이크 · 어드벤처 타임 · 접힘용",
+      "category": "어드벤처 타임",
+      "description": "어드벤처 타임의 제이크 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/2996",
+      "sourcePage": "https://motionbgs.com/mobile/jake-the-dog",
+      "approxMB": 17.3,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cute",
+        "cartoon"
+      ],
+      "artworkKey": "curated-20261013-jake-the-dog",
+      "recommendationGroup": "어드벤처 타임"
+    },
+    {
+      "id": "curated-dipper-mabels-adventures-wide",
+      "title": "디퍼와 메이블 · 모험 · 펼침용",
+      "category": "그래비티 폴즈",
+      "description": "디퍼와 메이블 · 모험 장면 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/7047",
+      "sourcePage": "https://motionbgs.com/dipper-mabels-adventures",
+      "approxMB": 5.9,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cartoon"
+      ],
+      "artworkKey": "curated-20261013-dipper-mabels-adventures",
+      "recommendationGroup": "그래비티 폴즈"
+    },
+    {
+      "id": "curated-cute-cat-in-forest-wide",
+      "title": "고양이 · 숲속 · 펼침용",
+      "category": "동물·힐링",
+      "description": "숲속의 귀여운 고양이 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/1232",
+      "sourcePage": "https://motionbgs.com/cute-cat-in-forest",
+      "approxMB": 8.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "animal",
+        "cat",
+        "cute",
+        "calm"
+      ],
+      "artworkKey": "curated-20261013-cute-cat-in-forest",
+      "recommendationGroup": "동물·힐링"
+    },
+    {
+      "id": "curated-cinnamoroll-sky-adventures-wide",
+      "title": "시나모롤 · 하늘 모험 · 펼침용",
+      "category": "산리오",
+      "description": "시나모롤과 파란 하늘 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/3152",
+      "sourcePage": "https://motionbgs.com/cinnamoroll-sky-adventures",
+      "approxMB": 0.4,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "sanrio",
+        "cute",
+        "calm",
+        "blue"
+      ],
+      "artworkKey": "curated-20261013-cinnamoroll-sky-adventures",
+      "recommendationGroup": "산리오"
+    },
+    {
+      "id": "curated-tom-and-jerry-old-tv-wide",
+      "title": "톰과 제리 · 오래된 TV · 펼침용",
+      "category": "톰과 제리",
+      "description": "톰과 제리 · 옛 TV 분위기 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/hd/8322",
+      "sourcePage": "https://motionbgs.com/tom-and-jerry-old-tv",
+      "approxMB": 4.3,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "가로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 HD 1920×1080 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cartoon"
+      ],
+      "artworkKey": "curated-20261013-tom-and-jerry-old-tv",
+      "recommendationGroup": "톰과 제리"
+    },
+    {
+      "id": "curated-abi-toads-lilypad-ride-portrait",
+      "title": "연못 개구리 · 수련잎 여행 · 접힘용",
+      "category": "동물·힐링",
+      "description": "수련잎을 타는 개구리 캐릭터 · 제공처 MP4 직접 다운로드 · 적용 전 미리보기 가능",
+      "url": "https://motionbgs.com/dl/mhd/7631",
+      "sourcePage": "https://motionbgs.com/mobile/abi-toads-lilypad-ride",
+      "approxMB": 1.4,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 원본 동영상 제공처",
+      "recommendedScenes": [
+        "NORMAL",
+        "NIGHT"
+      ],
+      "orientation": "세로",
+      "style": "애니메이션/캐릭터",
+      "quality": "제공처 모바일 720×1280 MP4 · 실제 적용 전 재생 검사",
+      "recommendable": true,
+      "tasteTags": [
+        "animal",
+        "cute",
+        "calm"
+      ],
+      "artworkKey": "curated-20261013-abi-toads-lilypad-ride",
+      "recommendationGroup": "동물·힐링"
     }
   ]
 }
