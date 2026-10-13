@@ -1,7 +1,7 @@
 {
   "schemaVersion": 14,
-  "updatedAt": "2026-10-13T06:20:00Z",
-  "description": "Live catalog v14: 204 records after adding 21 publisher-linked Pokemon MP4 variants across 17 unique artworks (17 landscape HD + 4 portrait mobile), with original source pages and user-initiated downloads. Original catalog IDs preserved; no MP4 bytes or derivative fan media mirrored. Shin-chan/Conan source discovery ongoing, no unverified duplicates.",
+  "updatedAt": "2026-10-13",
+  "description": "Final character catalog expansion: 206 entries, including Tom & Jerry classic MotionBGS original landscape and portrait MP4 (8321). Shin-chan and Detective Conan retain their existing source-only and direct downloads; no unverified, duplicate or paid third-party video listed. Future video discovery is paused in favor of playback/recommendation/UI stabilization.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -5842,6 +5842,64 @@
         "character"
       ],
       "artworkKey": "motionbgs:7780"
+    },
+    {
+      "id": "final-tom-jerry-classic-wide",
+      "title": "톰과 제리 · 장난꾸러기 친구들 (펼침)",
+      "category": "톰과 제리",
+      "description": "톰과 제리의 원작풍 캐릭터 라이브 배경 · 가로 원본 MP4 · 제공처에서 직접 가져와 미리보기 및 적용",
+      "url": "https://motionbgs.com/dl/hd/8321",
+      "sourcePage": "https://motionbgs.com/tom-and-jerry",
+      "approxMB": 6.9,
+      "mime": "video/mp4",
+      "width": 1920,
+      "height": 1080,
+      "credit": "MotionBGS · 제작자 제공 원본 다운로드 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "가로",
+      "style": "카툰/캐릭터",
+      "quality": "HD (1920×1080) · 다운로드 후 미리보기 확인",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cartoon",
+        "cute",
+        "nostalgia"
+      ],
+      "artworkKey": "motionbgs:8321",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
+    },
+    {
+      "id": "final-tom-jerry-classic-portrait",
+      "title": "톰과 제리 · 장난꾸러기 친구들 (닫힘)",
+      "category": "톰과 제리",
+      "description": "톰과 제리의 원작풍 캐릭터 라이브 배경 · 세로 모바일 원본 MP4 · 제공처에서 직접 가져와 미리보기 및 적용",
+      "url": "https://motionbgs.com/dl/mhd/8321",
+      "sourcePage": "https://motionbgs.com/mobile/tom-and-jerry",
+      "approxMB": 3.5,
+      "mime": "video/mp4",
+      "width": 720,
+      "height": 1280,
+      "credit": "MotionBGS · 제작자 제공 원본 다운로드 (개인 사용)",
+      "recommendedScenes": [
+        "NORMAL",
+        "CHARGING"
+      ],
+      "orientation": "세로",
+      "style": "카툰/캐릭터",
+      "quality": "Mobile HD (720×1280) · 다운로드 후 미리보기 확인",
+      "recommendable": true,
+      "tasteTags": [
+        "character",
+        "cartoon",
+        "cute",
+        "nostalgia"
+      ],
+      "artworkKey": "motionbgs:8321",
+      "chargingStyle": "분위기 보완(충전 표시 아님)"
     }
   ]
 }
