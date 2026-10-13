@@ -33,3 +33,15 @@ The app reads `wallpapers/catalog-v12.json` (129 publisher-linked variants).
 - These two are `recommendable: false` until their exact media URLs, downloaded MP4 bytes and portrait video dimensions have been checked. The in-app gallery exposes an original-page download button and the personal media picker. Do not represent these as ready-to-play auto-theme videos.
 - Built-in same-character fallback in build 64: when a scene has fewer than two matching artworks of the selected theme and screen orientation, users can enable other compatible artworks from that same theme. Each card identifies actual scene matches vs same-theme stand-ins. This does not increase the number of unique videos.
 - Earlier `catalog-v11.json` and `catalog-v12.json` are intentionally retained for older app builds.
+
+
+## 2026-10-13 direct-media expansion (catalog-v14 compatible)
+
+- Added **22 new directly linked MP4 media variants from 17 distinct scenes** (16 landscape, 6 portrait) without renaming/removing the original 135 catalog IDs. Public live catalog now contains **157** entries.
+- Expanded the selection with Stitch (including Night Stars), Kirby (sleeping and regular), Pokemon (Sobble, Umbreon, Pikachu rain), Snoopy, Totoro, We Bare Bears, Animal Crossing, Adventure Time, Gravity Falls, Cinnamoroll, Tom and Jerry, and relaxing cat/frog scenes.
+- **First choice**: publisher-provided `motionbgs.com/dl/hd/{id}` or `/dl/mhd/{id}` MP4 links that the app can download and preview after the user taps the choice.
+- **Secondary fallback only**: original-post file attachments (Shin-chan), or source-page-only references needing manual download and subsequent private import. Do not replace automatically playable candidates with page-only placeholders simply to inflate counts.
+- No third-party MP4 bytes or character artwork are copied into this repository. These entries are source links, not licenses or claims of ownership. Respect publisher permissions and use for the user's personal wallpaper.
+- Catalogue page/download-button URLs and the site's published dimension labels were reviewed. Actual Android decode, content and source availability still require the app's post-download checks.
+- To support old app builds, this update intentionally keeps `schemaVersion: 14` and the same live URL. A new app build is **not** required to see newly published choices after refreshing the catalogue; offline devices may temporarily use their prior cached list.
+- For future app builds, thumbs-up/down per *exact media ID* avoids treating a portrait and landscape variant as the same choice. Distinct variants still share an artworkKey for grouping in automatic theme rotation.
