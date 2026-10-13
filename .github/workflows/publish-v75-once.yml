@@ -1,0 +1,41 @@
+name: Publish signed PocketFoldLive v75 once
+on:
+  push:
+    paths:
+      - ".github/workflows/publish-v75-once.yml"
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  publish:
+    if: github.repository == 'Lovely573/PocketFoldLive-Updates'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Refuse duplicate v75 release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh release view v75 --repo Lovely573/PocketFoldLive-Updates >/dev/null 2>&1; then
+            echo "Refusing to republish v75"
+            exit 1
+          fi
+      - name: Verify signed APK artifact and extract for app updater
+        env:
+          SOURCE_ARCHIVE_URL: "https://sdmntprnznorth.oaiusercontent.com/files/00000000-06b8-820b-8040-60b2d3e9f596/raw?se=2026-10-13T04%3A31%3A52Z&sp=r&sv=2026-02-06&sr=b&scid=feed419b-14c2-5fcb-a0ed-ea1ae5a9ce54&skoid=d5627e4c-566b-4761-a954-54993b0ed17b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-10-13T01%3A21%3A47Z&ske=2026-10-14T01%3A21%3A47Z&sks=b&skv=2026-02-06&sig=yKjqpIlpzFzhscp5q4VhWy59Kn34z%2BdbeRQ5U3pvJZI%3D"
+        run: |
+          set -euo pipefail
+          curl -fsSL --retry 2 --connect-timeout 15 --max-time 180 "$SOURCE_ARCHIVE_URL" -o artifact.zip
+          echo "e3d51f2598e1dcacc4fa3bcc40362aaeef959fba6a5edc90118f2110cfbdd4ef  artifact.zip" | sha256sum -c -
+          unzip -p artifact.zip PocketFoldLive-B75-test.apk > PocketFoldLive.apk
+          echo "412aa843441842f031b35b280f3ff34ac385476b5e8609d9a3be3a01a7f9239d  PocketFoldLive.apk" | sha256sum -c -
+          test "$(stat -c '%s' PocketFoldLive.apk)" -eq 14717403
+      - name: Publish latest v75 in-app update
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create v75 PocketFoldLive.apk \
+            --repo Lovely573/PocketFoldLive-Updates \
+            --title "PocketFoldLive v0.30.4 (build 75) · 디코더 충돌 방지" \
+            --notes "Fold8에서 잠금화면, 커버·내부화면 전환 시 배경화면 서비스 엔진 여러 개가 동시에 동영상 디코더를 준비하고 일부가 초기화에 실패하던 증상에 대응했습니다. 마지막으로 안정적으로 화면에 표시되는 엔진 하나만 디코더를 점유하며, 다른 엔진이 표시되면 기존 재생기를 먼저 정리합니다. Surface 크기가 0이거나 보이지 않는 엔진은 디코더를 사용하지 않습니다. 기존 영상과 모든 설정은 보존합니다. 자동 빌드 및 서명 검사 성공. 실기기에서의 해결 여부는 업데이트 후 확인해야 하며, 문제가 남으면 DECODER_TAKEOVER/DECODER_YIELD/FIRST_FRAME/NATIVE_EXCEPTION/EXO_ERROR 진단 기록을 확인해 주세요." \
+            --latest
