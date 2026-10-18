@@ -1,7 +1,7 @@
 {
   "schemaVersion": 14,
   "updatedAt": "2026-10-18",
-  "description": "Final character catalog expansion: 206 entries, including Tom & Jerry classic MotionBGS original landscape and portrait MP4 (8321). Shin-chan and Detective Conan retain their existing source-only and direct downloads; no unverified, duplicate or paid third-party video listed. Future video discovery is paused in favor of playback/recommendation/UI stabilization. Chiikawa source collections (portrait/landscape) are external, non-playable references for personal local import only; no video mirroring, unverified direct MP4 or automatic recommendation.",
+  "description": "Final character catalog expansion: 206 entries, including Tom & Jerry classic MotionBGS original landscape and portrait MP4 (8321). Shin-chan and Detective Conan retain their existing source-only and direct downloads; no unverified, duplicate or paid third-party video listed. Future video discovery is paused in favor of playback/recommendation/UI stabilization. Chiikawa source collections (portrait/landscape) are external, non-playable references for personal local import only; no video mirroring, unverified direct MP4 or automatic recommendation. Independent Chiikawa source collections (secondary publisher portrait/landscape) indexed as publisher-page-only for personal file import; no mirroring or unverified direct video.",
   "items": [
     {
       "id": "shinchan-hill",
@@ -5948,6 +5948,54 @@
         "character"
       ],
       "artworkKey": "chiikawa:landscape-source-collection"
+    },
+    {
+      "id": "chiikawa-second-portrait-live",
+      "title": "치이카와 · 세로 라이브 배경 추가 모음",
+      "category": "치이카와",
+      "description": "다른 비공식 제작·공유 사이트의 치이카와·우사기·하치와레·모몽가 스마트폰용 라이브 영상. 원본 사이트에서 개인 이용조건을 확인하고 원하는 MP4를 저장한 뒤 '내 영상 파일 가져오기'로 적용하세요. 링크 항목으로 영상 자체를 직접 제공하지 않습니다.",
+      "sourcePage": "https://chiikawa-wallpaper.com/ko/mobile/live",
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "approxMB": 0,
+      "credit": "Chiikawa Wallpaper (chiikawa-wallpaper.com) · 개인 이용 전용 팬 사이트",
+      "recommendedScenes": [],
+      "orientation": "세로",
+      "style": "2D/3D",
+      "quality": "원본 목록 링크 · 개별 파일은 미검증",
+      "recommendable": false,
+      "tasteTags": [
+        "chiikawa",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "chiikawa:secondary-portrait-collection"
+    },
+    {
+      "id": "chiikawa-second-landscape-live",
+      "title": "치이카와 · 가로 라이브 배경 추가 모음",
+      "category": "치이카와",
+      "description": "다른 비공식 제작·공유 사이트의 치이카와·하치와레·우사기 폴드 펼침 화면용 가로 라이브 영상. 개인용 파일을 내려받은 뒤 앱 내 파일 가져오기로 미리보기 및 적용할 수 있어요.",
+      "sourcePage": "https://chiikawa-wallpaper.com/ko/desktop/live",
+      "mime": "video/mp4",
+      "width": 0,
+      "height": 0,
+      "approxMB": 0,
+      "credit": "Chiikawa Wallpaper (chiikawa-wallpaper.com) · 개인 이용 전용 팬 사이트",
+      "recommendedScenes": [],
+      "orientation": "가로",
+      "style": "2D/3D",
+      "quality": "원본 목록 링크 · 개별 파일은 미검증",
+      "recommendable": false,
+      "tasteTags": [
+        "chiikawa",
+        "cute",
+        "2d",
+        "character"
+      ],
+      "artworkKey": "chiikawa:secondary-landscape-collection"
     }
   ]
 }
